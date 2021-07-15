@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04DDB81FCD1CDFBD0D2B46FD /* Pods_testleboncoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464D9039874ACE774EBB6495 /* Pods_testleboncoin.framework */; };
+		38EF9F3493146C0E0280B335 /* Pods_testleboncoin_testleboncoinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C748E248015A4BE4DA43929 /* Pods_testleboncoin_testleboncoinUITests.framework */; };
+		EBBC796D01A6642BE9747CCD /* Pods_testleboncoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83700150374B7C42ED107A3 /* Pods_testleboncoinTests.framework */; };
 		ED6C835826A06FDB00E24D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C835726A06FDB00E24D02 /* AppDelegate.swift */; };
 		ED6C835C26A06FDB00E24D02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C835B26A06FDB00E24D02 /* ViewController.swift */; };
 		ED6C836126A06FDE00E24D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6C836026A06FDE00E24D02 /* Assets.xcassets */; };
@@ -33,6 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07380EA7896A4D5D1F6480C6 /* Pods-testleboncoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoin.debug.xcconfig"; path = "Target Support Files/Pods-testleboncoin/Pods-testleboncoin.debug.xcconfig"; sourceTree = "<group>"; };
+		0C748E248015A4BE4DA43929 /* Pods_testleboncoin_testleboncoinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testleboncoin_testleboncoinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CEB3E08ABA5EC3A2A89F53A /* Pods-testleboncoin-testleboncoinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoin-testleboncoinUITests.debug.xcconfig"; path = "Target Support Files/Pods-testleboncoin-testleboncoinUITests/Pods-testleboncoin-testleboncoinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		434045CB61326139988CD212 /* Pods-testleboncoin-testleboncoinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoin-testleboncoinUITests.release.xcconfig"; path = "Target Support Files/Pods-testleboncoin-testleboncoinUITests/Pods-testleboncoin-testleboncoinUITests.release.xcconfig"; sourceTree = "<group>"; };
+		464D9039874ACE774EBB6495 /* Pods_testleboncoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testleboncoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABABE1E5E3D72369A3EB75C /* Pods-testleboncoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoinTests.debug.xcconfig"; path = "Target Support Files/Pods-testleboncoinTests/Pods-testleboncoinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		508831FCEA30CDBF1AAC35B6 /* Pods-testleboncoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoin.release.xcconfig"; path = "Target Support Files/Pods-testleboncoin/Pods-testleboncoin.release.xcconfig"; sourceTree = "<group>"; };
+		B44B9F41A6AEA041681884F5 /* Pods-testleboncoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoinTests.release.xcconfig"; path = "Target Support Files/Pods-testleboncoinTests/Pods-testleboncoinTests.release.xcconfig"; sourceTree = "<group>"; };
+		D83700150374B7C42ED107A3 /* Pods_testleboncoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testleboncoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6C835426A06FDB00E24D02 /* testleboncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testleboncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6C835726A06FDB00E24D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED6C835B26A06FDB00E24D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DDB81FCD1CDFBD0D2B46FD /* Pods_testleboncoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBC796D01A6642BE9747CCD /* Pods_testleboncoinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +80,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EF9F3493146C0E0280B335 /* Pods_testleboncoin_testleboncoinUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		751A1BDCEFF106EFC80BED6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				464D9039874ACE774EBB6495 /* Pods_testleboncoin.framework */,
+				0C748E248015A4BE4DA43929 /* Pods_testleboncoin_testleboncoinUITests.framework */,
+				D83700150374B7C42ED107A3 /* Pods_testleboncoinTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C15F31EF4AFF4A67995FA386 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07380EA7896A4D5D1F6480C6 /* Pods-testleboncoin.debug.xcconfig */,
+				508831FCEA30CDBF1AAC35B6 /* Pods-testleboncoin.release.xcconfig */,
+				3CEB3E08ABA5EC3A2A89F53A /* Pods-testleboncoin-testleboncoinUITests.debug.xcconfig */,
+				434045CB61326139988CD212 /* Pods-testleboncoin-testleboncoinUITests.release.xcconfig */,
+				4ABABE1E5E3D72369A3EB75C /* Pods-testleboncoinTests.debug.xcconfig */,
+				B44B9F41A6AEA041681884F5 /* Pods-testleboncoinTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED6C834B26A06FDB00E24D02 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +117,8 @@
 				ED6C836D26A06FDE00E24D02 /* testleboncoinTests */,
 				ED6C837826A06FDE00E24D02 /* testleboncoinUITests */,
 				ED6C835526A06FDB00E24D02 /* Products */,
+				C15F31EF4AFF4A67995FA386 /* Pods */,
+				751A1BDCEFF106EFC80BED6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED6C837E26A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoin" */;
 			buildPhases = (
+				2032ED0BCC0E96F5417D7C2A /* [CP] Check Pods Manifest.lock */,
 				ED6C835026A06FDB00E24D02 /* Sources */,
 				ED6C835126A06FDB00E24D02 /* Frameworks */,
 				ED6C835226A06FDB00E24D02 /* Resources */,
+				ED6C838726A0800000E24D02 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -146,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED6C838126A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinTests" */;
 			buildPhases = (
+				46028D8F2D32753FFBC0A720 /* [CP] Check Pods Manifest.lock */,
 				ED6C836626A06FDE00E24D02 /* Sources */,
 				ED6C836726A06FDE00E24D02 /* Frameworks */,
 				ED6C836826A06FDE00E24D02 /* Resources */,
@@ -164,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED6C838426A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinUITests" */;
 			buildPhases = (
+				DA177286860CD64EEDC1B5FA /* [CP] Check Pods Manifest.lock */,
 				ED6C837126A06FDE00E24D02 /* Sources */,
 				ED6C837226A06FDE00E24D02 /* Frameworks */,
 				ED6C837326A06FDE00E24D02 /* Resources */,
@@ -245,6 +289,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2032ED0BCC0E96F5417D7C2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testleboncoin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46028D8F2D32753FFBC0A720 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testleboncoinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA177286860CD64EEDC1B5FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testleboncoin-testleboncoinUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED6C838726A0800000E24D02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED6C835026A06FDB00E24D02 /* Sources */ = {
@@ -417,6 +547,7 @@
 		};
 		ED6C837F26A06FDE00E24D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07380EA7896A4D5D1F6480C6 /* Pods-testleboncoin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,6 +567,7 @@
 		};
 		ED6C838026A06FDE00E24D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 508831FCEA30CDBF1AAC35B6 /* Pods-testleboncoin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,6 +587,7 @@
 		};
 		ED6C838226A06FDE00E24D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ABABE1E5E3D72369A3EB75C /* Pods-testleboncoinTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -476,6 +609,7 @@
 		};
 		ED6C838326A06FDE00E24D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B44B9F41A6AEA041681884F5 /* Pods-testleboncoinTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +631,7 @@
 		};
 		ED6C838526A06FDE00E24D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CEB3E08ABA5EC3A2A89F53A /* Pods-testleboncoin-testleboncoinUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +651,7 @@
 		};
 		ED6C838626A06FDE00E24D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 434045CB61326139988CD212 /* Pods-testleboncoin-testleboncoinUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
