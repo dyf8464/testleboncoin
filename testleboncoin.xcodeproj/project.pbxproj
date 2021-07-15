@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED6C835826A06FDB00E24D02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C835726A06FDB00E24D02 /* AppDelegate.swift */; };
+		ED6C835C26A06FDB00E24D02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C835B26A06FDB00E24D02 /* ViewController.swift */; };
+		ED6C836126A06FDE00E24D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6C836026A06FDE00E24D02 /* Assets.xcassets */; };
+		ED6C836426A06FDE00E24D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6C836226A06FDE00E24D02 /* LaunchScreen.storyboard */; };
+		ED6C836F26A06FDE00E24D02 /* testleboncoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C836E26A06FDE00E24D02 /* testleboncoinTests.swift */; };
+		ED6C837A26A06FDE00E24D02 /* testleboncoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C837926A06FDE00E24D02 /* testleboncoinUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED6C836B26A06FDE00E24D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED6C834C26A06FDB00E24D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED6C835326A06FDB00E24D02;
+			remoteInfo = testleboncoin;
+		};
+		ED6C837626A06FDE00E24D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED6C834C26A06FDB00E24D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED6C835326A06FDB00E24D02;
+			remoteInfo = testleboncoin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED6C835426A06FDB00E24D02 /* testleboncoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testleboncoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6C835726A06FDB00E24D02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED6C835B26A06FDB00E24D02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED6C836026A06FDE00E24D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED6C836326A06FDE00E24D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED6C836526A06FDE00E24D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED6C836A26A06FDE00E24D02 /* testleboncoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testleboncoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6C836E26A06FDE00E24D02 /* testleboncoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testleboncoinTests.swift; sourceTree = "<group>"; };
+		ED6C837026A06FDE00E24D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED6C837526A06FDE00E24D02 /* testleboncoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testleboncoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6C837926A06FDE00E24D02 /* testleboncoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testleboncoinUITests.swift; sourceTree = "<group>"; };
+		ED6C837B26A06FDE00E24D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED6C835126A06FDB00E24D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C836726A06FDE00E24D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C837226A06FDE00E24D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED6C834B26A06FDB00E24D02 = {
+			isa = PBXGroup;
+			children = (
+				ED6C835626A06FDB00E24D02 /* testleboncoin */,
+				ED6C836D26A06FDE00E24D02 /* testleboncoinTests */,
+				ED6C837826A06FDE00E24D02 /* testleboncoinUITests */,
+				ED6C835526A06FDB00E24D02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED6C835526A06FDB00E24D02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C835426A06FDB00E24D02 /* testleboncoin.app */,
+				ED6C836A26A06FDE00E24D02 /* testleboncoinTests.xctest */,
+				ED6C837526A06FDE00E24D02 /* testleboncoinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED6C835626A06FDB00E24D02 /* testleboncoin */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C835726A06FDB00E24D02 /* AppDelegate.swift */,
+				ED6C835B26A06FDB00E24D02 /* ViewController.swift */,
+				ED6C836026A06FDE00E24D02 /* Assets.xcassets */,
+				ED6C836226A06FDE00E24D02 /* LaunchScreen.storyboard */,
+				ED6C836526A06FDE00E24D02 /* Info.plist */,
+			);
+			path = testleboncoin;
+			sourceTree = "<group>";
+		};
+		ED6C836D26A06FDE00E24D02 /* testleboncoinTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C836E26A06FDE00E24D02 /* testleboncoinTests.swift */,
+				ED6C837026A06FDE00E24D02 /* Info.plist */,
+			);
+			path = testleboncoinTests;
+			sourceTree = "<group>";
+		};
+		ED6C837826A06FDE00E24D02 /* testleboncoinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C837926A06FDE00E24D02 /* testleboncoinUITests.swift */,
+				ED6C837B26A06FDE00E24D02 /* Info.plist */,
+			);
+			path = testleboncoinUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED6C835326A06FDB00E24D02 /* testleboncoin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED6C837E26A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoin" */;
+			buildPhases = (
+				ED6C835026A06FDB00E24D02 /* Sources */,
+				ED6C835126A06FDB00E24D02 /* Frameworks */,
+				ED6C835226A06FDB00E24D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testleboncoin;
+			productName = testleboncoin;
+			productReference = ED6C835426A06FDB00E24D02 /* testleboncoin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED6C836926A06FDE00E24D02 /* testleboncoinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED6C838126A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinTests" */;
+			buildPhases = (
+				ED6C836626A06FDE00E24D02 /* Sources */,
+				ED6C836726A06FDE00E24D02 /* Frameworks */,
+				ED6C836826A06FDE00E24D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED6C836C26A06FDE00E24D02 /* PBXTargetDependency */,
+			);
+			name = testleboncoinTests;
+			productName = testleboncoinTests;
+			productReference = ED6C836A26A06FDE00E24D02 /* testleboncoinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED6C837426A06FDE00E24D02 /* testleboncoinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED6C838426A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinUITests" */;
+			buildPhases = (
+				ED6C837126A06FDE00E24D02 /* Sources */,
+				ED6C837226A06FDE00E24D02 /* Frameworks */,
+				ED6C837326A06FDE00E24D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED6C837726A06FDE00E24D02 /* PBXTargetDependency */,
+			);
+			name = testleboncoinUITests;
+			productName = testleboncoinUITests;
+			productReference = ED6C837526A06FDE00E24D02 /* testleboncoinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED6C834C26A06FDB00E24D02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					ED6C835326A06FDB00E24D02 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					ED6C836926A06FDE00E24D02 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = ED6C835326A06FDB00E24D02;
+					};
+					ED6C837426A06FDE00E24D02 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = ED6C835326A06FDB00E24D02;
+					};
+				};
+			};
+			buildConfigurationList = ED6C834F26A06FDB00E24D02 /* Build configuration list for PBXProject "testleboncoin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED6C834B26A06FDB00E24D02;
+			productRefGroup = ED6C835526A06FDB00E24D02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED6C835326A06FDB00E24D02 /* testleboncoin */,
+				ED6C836926A06FDE00E24D02 /* testleboncoinTests */,
+				ED6C837426A06FDE00E24D02 /* testleboncoinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED6C835226A06FDB00E24D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED6C836426A06FDE00E24D02 /* LaunchScreen.storyboard in Resources */,
+				ED6C836126A06FDE00E24D02 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C836826A06FDE00E24D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C837326A06FDE00E24D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED6C835026A06FDB00E24D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED6C835C26A06FDB00E24D02 /* ViewController.swift in Sources */,
+				ED6C835826A06FDB00E24D02 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C836626A06FDE00E24D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED6C836F26A06FDE00E24D02 /* testleboncoinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6C837126A06FDE00E24D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED6C837A26A06FDE00E24D02 /* testleboncoinUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED6C836C26A06FDE00E24D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED6C835326A06FDB00E24D02 /* testleboncoin */;
+			targetProxy = ED6C836B26A06FDE00E24D02 /* PBXContainerItemProxy */;
+		};
+		ED6C837726A06FDE00E24D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED6C835326A06FDB00E24D02 /* testleboncoin */;
+			targetProxy = ED6C837626A06FDE00E24D02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED6C836226A06FDE00E24D02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED6C836326A06FDE00E24D02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED6C837C26A06FDE00E24D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED6C837D26A06FDE00E24D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED6C837F26A06FDE00E24D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED6C838026A06FDE00E24D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED6C838226A06FDE00E24D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testleboncoin.app/testleboncoin";
+			};
+			name = Debug;
+		};
+		ED6C838326A06FDE00E24D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoinTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testleboncoin.app/testleboncoin";
+			};
+			name = Release;
+		};
+		ED6C838526A06FDE00E24D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = testleboncoin;
+			};
+			name = Debug;
+		};
+		ED6C838626A06FDE00E24D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = testleboncoinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.yangfan.testleboncoinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = testleboncoin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED6C834F26A06FDB00E24D02 /* Build configuration list for PBXProject "testleboncoin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED6C837C26A06FDE00E24D02 /* Debug */,
+				ED6C837D26A06FDE00E24D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED6C837E26A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED6C837F26A06FDE00E24D02 /* Debug */,
+				ED6C838026A06FDE00E24D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED6C838126A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED6C838226A06FDE00E24D02 /* Debug */,
+				ED6C838326A06FDE00E24D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED6C838426A06FDE00E24D02 /* Build configuration list for PBXNativeTarget "testleboncoinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED6C838526A06FDE00E24D02 /* Debug */,
+				ED6C838626A06FDE00E24D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED6C834C26A06FDB00E24D02 /* Project object */;
+}
