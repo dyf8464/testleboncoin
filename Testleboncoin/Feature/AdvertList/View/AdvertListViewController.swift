@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AdvertListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
