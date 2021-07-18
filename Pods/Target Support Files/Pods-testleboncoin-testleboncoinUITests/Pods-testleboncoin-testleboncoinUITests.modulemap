@@ -1,0 +1,6 @@
+framework module Pods_testleboncoin_testleboncoinUITests {
+  umbrella header "Pods-testleboncoin-testleboncoinUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
