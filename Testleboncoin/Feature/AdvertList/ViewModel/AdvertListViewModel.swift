@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class AdvertListViewModel {
+final class AdvertListViewModel {
     private(set) var categories: [CategoryModel]?
     private(set) var advertList: [AdvertItemModel]?
     var apiProvider = APIProvider()
@@ -18,7 +18,6 @@ class AdvertListViewModel {
 
     static let unKnwonMessage: AlertMessage =
         AlertMessage(title: "erreur", message: "Oups, un problème inconnu est survenu... veuillez réessayer ultérieurement.")
-
 
     // MARK: - API
     //récupération tous les données

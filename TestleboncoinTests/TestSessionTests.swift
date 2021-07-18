@@ -14,14 +14,15 @@ class TestSessionTests: XCTestCase {
     let sampleData = "leboncoin_dengyangfan".data(using: .utf8)!
     var sut: TestSession!
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+       try super.setUpWithError()
+        //mock TestSession
         sut = TestSession()
     }
 
-    override func tearDown() {
-        super.tearDown()
+    override func tearDownWithError() throws {
         sut = nil
+        try super.tearDownWithError()
     }
 
     // MARK: - Tests

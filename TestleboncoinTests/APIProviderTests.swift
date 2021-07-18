@@ -11,14 +11,15 @@ class APIProviderTests: XCTestCase {
 
     var sut: APIProvider!
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        //mock APIProvider
         let session: URLSession = TestSession()
         sut = APIProvider(session: session)
     }
-    override func tearDown() {
-        super.tearDown()
+    override func tearDownWithError() throws {
         sut = nil
+        try super.tearDownWithError()
     }
 
     // MARK: - Tests

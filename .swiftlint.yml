@@ -5,7 +5,7 @@ disabled_rules: # rule identifiers to exclude from running
 excluded:
   - Pods
 
-line_length: 150
+line_length: 200
 
 nesting:
   type_level:

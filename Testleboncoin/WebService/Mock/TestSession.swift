@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TestSession: URLSession {
+class TestSession: URLSession {
     fileprivate typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
     typealias Response = (data: Data?, urlResponse: URLResponse?, error: Error?)
     typealias HttpHeadersField = [String: String]
@@ -24,7 +24,8 @@ public class TestSession: URLSession {
     fileprivate var responses: [URL: Response] = [:]
     fileprivate var tasks: [URL: TestSessionDataTask] = [:]
 
-    // MARK: - methods
+    // MARK: - Mock
+    //Mock Méthode: dataTaskWithUrl
     public override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let error = NSError(domain: MockError.Domain,
                             code: MockError.Code.NoResponseRegistered.rawValue,
@@ -40,6 +41,7 @@ public class TestSession: URLSession {
         return task
     }
 
+    //Mock Class: TestSessionDataTask
     public class TestSessionDataTask: URLSessionDataTask {
         fileprivate var mockResponse: Response
         fileprivate (set) var called: [String: Response] = [:]
@@ -64,6 +66,7 @@ public class TestSession: URLSession {
         }
     }
 
+    //Mock Méthode: dataTaskWithRequest
     public override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
     -> URLSessionDataTask {
         return self.dataTask(with: request.url!, completionHandler: completionHandler)

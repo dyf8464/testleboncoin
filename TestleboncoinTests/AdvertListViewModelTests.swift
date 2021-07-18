@@ -10,30 +10,29 @@ import XCTest
 class AdvertListViewModelTests: XCTestCase {
 
     var sut: AdvertListViewModel!
-    var dataAdvertList: Data!
-    var dataErrorAdvertList: Data!
-    var dataCategories: Data!
-    var dataErrorCategories: Data!
-    let session: TestSession = TestSession()
 
-    override func setUp() {
-        super.setUp()
+    //mock data
+    let dataAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json"))!
+    let dataErrorAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListErrorFileName, ofType: "json"))!
+    let dataCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json"))!
+    let dataErrorCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryErrorFileName, ofType: "json"))!
+    var session: TestSession!
+
+    override func setUpWithError() throws {
+        try super.setUpWithError()
         sut = AdvertListViewModel()
 
         //mock apiProvider
+        session = TestSession()
         let apiProvider = APIProvider(session: session)
         sut.apiProvider = apiProvider
 
-        //mock Data
-        dataAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json"))!
-        dataErrorAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListErrorFileName, ofType: "json"))!
-        dataCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json"))!
-        dataErrorCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryErrorFileName, ofType: "json"))!
-
     }
-    override func tearDown() {
-        super.tearDown()
+
+    override func tearDownWithError() throws {
         sut = nil
+        session = nil
+        try super.tearDownWithError()
     }
 
     func testFetchDataReturnSuccess() {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIProvider: RESTAPIClient {
+final class APIProvider: RESTAPIClient {
     let baseURL = "https://raw.githubusercontent.com/leboncoin/paperclip/master/"
     let session: URLSession
     init(session: URLSession = URLSession.shared) {

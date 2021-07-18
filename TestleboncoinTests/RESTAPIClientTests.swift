@@ -22,14 +22,15 @@ class RESTAPIClientTests: XCTestCase {
     }
     var sut: MockAPIProvider!
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+       try super.setUpWithError()
+        //mock MockAPIProvider
         sut = MockAPIProvider()
     }
 
-    override func tearDown() {
-        super.tearDown()
+    override func tearDownWithError() throws {
         sut = nil
+        try super.tearDownWithError()
     }
     // MARK: - Tests
     func testRequestAPIReturnSuccess() {
