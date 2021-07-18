@@ -44,19 +44,28 @@ extension RESTAPIClient {
         let task = session.dataTask(with: request) { (data, response, error) in
             guard error == nil
             else {
-                return completion(.error(error!))
+                DispatchQueue.main.async {
+                    completion(.error(error!))
+                }
+                return
             }
             guard let response = response as? HTTPURLResponse, 200..<300 ~= response.statusCode
             else {
-                completion(.error(APIError.badResponse))
+                DispatchQueue.main.async {
+                    completion(.error(APIError.badResponse))
+                }
                 return
             }
 
             guard let data = data else { return }
 
             guard let value = try? JSONDecoder().decode(T.self, from: data)
-            else { completion(.error(APIError.jsonDecoder)); return }
-
+            else {
+                DispatchQueue.main.async {
+                    completion(.error(APIError.jsonDecoder))
+                }
+                return
+            }
             DispatchQueue.main.async {
                 completion(.success(value))
             }

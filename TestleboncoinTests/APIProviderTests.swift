@@ -10,8 +10,7 @@ import XCTest
 class APIProviderTests: XCTestCase {
 
     var sut: APIProvider!
-    let urlAdvertCategory = "https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json"
-    let urlAdvertList = "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json"
+
     override func setUp() {
         super.setUp()
         let session: URLSession = TestSession()
@@ -27,7 +26,7 @@ class APIProviderTests: XCTestCase {
         //Given
         let expectation = XCTestExpectation()
         let requestExpect = self.requestExpectAdvertCategory()
-        let path = Bundle.main.path(forResource: "category", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.request(endPoint: APIEndPoint.advertCategory).url!, data: sampleData)
             //When
@@ -57,7 +56,7 @@ class APIProviderTests: XCTestCase {
         //Given
         let expectation = XCTestExpectation()
         let requestExpect = self.requestExpectAdvertList()
-        let path = Bundle.main.path(forResource: "advertList", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.request(endPoint: APIEndPoint.advertList).url!, data: sampleData)
             //When
@@ -93,7 +92,7 @@ class APIProviderTests: XCTestCase {
     func testFetchAdvertListWithBadFormatJson() {
         //Given
         let expectation = XCTestExpectation()
-        let path = Bundle.main.path(forResource: "advertList_error", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testAdvertListErrorFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.request(endPoint: APIEndPoint.advertList).url!, data: sampleData)
             //When
@@ -123,7 +122,7 @@ class APIProviderTests: XCTestCase {
     func testFetchAdvertListReturnErrorStatusCode() {
         //Given
         let expectation = XCTestExpectation()
-        let path = Bundle.main.path(forResource: "advertList", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.request(endPoint: APIEndPoint.advertList).url!, data: sampleData, statusCode: 404)
             //When
@@ -152,13 +151,13 @@ class APIProviderTests: XCTestCase {
 
     // MARK: - Methods Private
     private func requestExpectAdvertList() -> URLRequest {
-        var requestExpect = URLRequest.init(url: URL(string: urlAdvertList)!)
+        var requestExpect = URLRequest.init(url: Constants.urlAdvertList)
         requestExpect.httpMethod = "GET"
         return requestExpect
     }
 
     private func requestExpectAdvertCategory() -> URLRequest {
-        var requestExpect = URLRequest.init(url: URL(string: urlAdvertCategory)!)
+        var requestExpect = URLRequest.init(url: Constants.urlAdvertCategory)
         requestExpect.httpMethod = "GET"
         return requestExpect
     }

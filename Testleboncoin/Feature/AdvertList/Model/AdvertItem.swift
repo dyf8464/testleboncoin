@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AdvertItemModel: Codable {
+class AdvertItemModel: Codable {
     enum CodingKeys: String, CodingKey {
       case id, title, description, price, siret
       case categoryId = "category_id"
@@ -25,6 +25,7 @@ struct AdvertItemModel: Codable {
     let isUrgent: Bool
     let imagesUrl: ImagesUrlModel
     let siret: String?
+    weak var delegate: CategoryNameDelegate?
 }
 
 struct ImagesUrlModel: Codable {

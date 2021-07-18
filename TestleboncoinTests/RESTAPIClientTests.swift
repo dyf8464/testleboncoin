@@ -35,7 +35,7 @@ class RESTAPIClientTests: XCTestCase {
     func testRequestAPIReturnSuccess() {
         //Given
         let expectation = XCTestExpectation()
-        let path = Bundle.main.path(forResource: "category", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.testURL, data: sampleData)
 
@@ -64,7 +64,7 @@ class RESTAPIClientTests: XCTestCase {
     func testRequestAPIWithBadFormatJSON() {
         //Given
         let expectation = XCTestExpectation()
-        let path = Bundle.main.path(forResource: "category_error", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testCategoryErrorFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.testURL, data: sampleData)
 
@@ -95,7 +95,7 @@ class RESTAPIClientTests: XCTestCase {
     func testRequestAPIReturnErrorStatusCode() {
         //Given
         let expectation = XCTestExpectation()
-        let path = Bundle.main.path(forResource: "category", ofType: "json")
+        let path = Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")
         if let sampleData = Data.loadFileFromLocalPath(path), let session = sut.session as? TestSession {
             session.registerTestResponse(sut.testURL, data: sampleData, statusCode: 404)
             //When
