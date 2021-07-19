@@ -8,6 +8,9 @@
 import Foundation
 
 extension Data {
+    /// load data from local path of file
+    /// - Parameter localFilePath: path of file
+    /// - Returns: data
     static func loadFileFromLocalPath(_ localFilePath: String?) -> Data? {
         guard let path = localFilePath else {
             return nil

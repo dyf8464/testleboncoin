@@ -20,7 +20,10 @@ final class AdvertListViewModel {
         AlertMessage(title: "erreur", message: "Oups, un problème inconnu est survenu... veuillez réessayer ultérieurement.")
 
     // MARK: - API
-    //récupération tous les données
+    /// download all data to display the list
+    /// - Parameters:
+    ///   - success: return of closure for success
+    ///   - alertMessage: return of message for error
     func fetchData(success: @escaping() -> Void, alertMessage: @escaping(AlertMessage) -> Void) {
         //récupération de la liste des catégories
         let fetchAdvertListWorkItem: DispatchWorkItem = DispatchWorkItem {
@@ -41,6 +44,10 @@ final class AdvertListViewModel {
 
     }
 
+    /// download the Category from server
+    /// - Parameters:
+    ///   - success: return of closure for success
+    ///   - error: return of closure for error
     private func fetchCateogory(success: @escaping() -> Void, error: @escaping(Error) -> Void) {
         apiProvider.fetchCategories {
             switch $0 {
@@ -53,6 +60,10 @@ final class AdvertListViewModel {
         }
     }
 
+    /// download the list of adverts from server
+    /// - Parameters:
+    ///   - success: return of closure for success
+    ///   - error: return of closure for error
     private func fetchAdvertList(success: @escaping() -> Void, error: @escaping(Error) -> Void) {
         apiProvider.fetchAdvertList {
             switch $0 {
@@ -71,12 +82,14 @@ final class AdvertListViewModel {
     }
 
     // MARK: - Utils
+    /// configuration for the list of adverts
     private func configurationAdvertList() {
         self.advertList?.forEach {
             $0.delegate = self
         }
     }
 
+    /// convert Error to AlertMessage
     private func alertMesssage(error: Error) -> AlertMessage {
         switch error {
         case APIError.jsonDecoder:
@@ -90,6 +103,9 @@ final class AdvertListViewModel {
 }
 // MARK: - CategoryNameDelegate
 extension AdvertListViewModel: CategoryNameDelegate {
+    /// get name of category by id
+    /// - Parameter idCategory: id of category
+    /// - Returns: name of category
     func nameCategory(idCategory: Int64) -> String? {
         if let categoriesFilter = self.categories?.filter({$0.id == idCategory}) {
             if categoriesFilter.count > 0 {

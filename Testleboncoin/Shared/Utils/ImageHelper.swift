@@ -17,10 +17,21 @@ final class ImageHelper {
     }
 
     static var imageCache: NSCache<AnyObject, AnyObject>! = NSCache<AnyObject, AnyObject>()
+
+    /// Download data from url
+    /// - Parameters:
+    ///   - session: session for download data, the default is URLSession.shared
+    ///   - url: url of data
+    ///   - completion: return of result:  Data, URLResponse, Error
     private static func fetchData(session: URLSession, url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         session.dataTask(with: url, completionHandler: completion).resume()
     }
 
+    /// Download image from url
+    /// - Parameters:
+    ///   - session: session for download image, the default is URLSession.shared
+    ///   - url: url of image
+    ///   - completion: return result : ImageAPIResult
     static func fetchImage(session: URLSession = URLSession.shared, url: URL, completion: @escaping(ImageAPIResult<Data>) -> Void) {
         ImageHelper.fetchData(session: session, url: url) { data, response, error in
             if let error = error {

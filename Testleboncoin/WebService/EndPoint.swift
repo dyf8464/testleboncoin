@@ -7,10 +7,12 @@
 
 import Foundation
 protocol EndPoint {
+    /// url of endPoint
     var endPointURL: String { get }
 }
 
 enum APIEndPoint: EndPoint {
+    /// url of endPoint
     var endPointURL: String {
         switch self {
         case .advertList:
@@ -19,7 +21,8 @@ enum APIEndPoint: EndPoint {
            return "categories.json"
         }
     }
-
+    /// list of adverts
     case advertList
+    /// category of adverts
     case advertCategory
 }

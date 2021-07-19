@@ -14,6 +14,9 @@ final class APIProvider: RESTAPIClient {
         self.session = session
     }
     // MARK: - API
+    /// download list of categories
+    /// - Parameter completion: return of closure: APIResult<[CategoryModel]>
+    /// - Returns: URLRequest for download list
     @discardableResult
     func fetchCategories(completion: @escaping (APIResult<[CategoryModel]>) -> Void) -> URLRequest {
         let request = self.advertCategoryRequest()
@@ -21,6 +24,9 @@ final class APIProvider: RESTAPIClient {
         return request
     }
 
+    /// download list of adverts
+    /// - Parameter completion: return of closure: APIResult<[CategoryModel]>
+    /// - Returns: URLRequest for download list
     @discardableResult
     func fetchAdvertList(completion: @escaping (APIResult<[AdvertItemModel]>) -> Void) -> URLRequest {
         let request = self.advertListRequest()
@@ -29,12 +35,16 @@ final class APIProvider: RESTAPIClient {
     }
 
     // MARK: - Request
+    /// create Request for donwload list of categories
+    /// - Returns: URLRequest created
     private func advertCategoryRequest() -> URLRequest {
         var request = self.request(endPoint: APIEndPoint.advertCategory)
         request.httpMethod = HTTPMethod.get.rawValue
         return request
     }
 
+    /// create Request for donwload list of adverts
+    /// - Returns: URLRequest created
     private func advertListRequest() -> URLRequest {
         var request = self.request(endPoint: APIEndPoint.advertList)
         request.httpMethod = HTTPMethod.get.rawValue

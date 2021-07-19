@@ -30,16 +30,26 @@ protocol RESTAPIClient {
 
 extension RESTAPIClient {
 
+    /// create URLComponents by EndPoint
+    /// - Parameter endPoint: endPoint
+    /// - Returns: URLComponents created
     private func urlComponent(endPoint: EndPoint) -> URLComponents {
         let urlString = baseURL + endPoint.endPointURL
         let component = URLComponents(string: urlString)
         return component!
     }
 
+    /// create Requst by EndPoint
+    /// - Parameter endPoint: endpoint
+    /// - Returns: URLRequest created
     func request(endPoint: EndPoint) -> URLRequest {
         return URLRequest(url: self.urlComponent(endPoint: endPoint).url!)
     }
 
+    /// download the data with URLRequest
+    /// - Parameters:
+    ///   - request: URLRequest for download the data
+    ///   - completion: return of closure : APIResult
     func requestAPI<T: Codable>(with request: URLRequest, completion: @escaping (APIResult<T>) -> Void) {
         let task = session.dataTask(with: request) { (data, response, error) in
             guard error == nil

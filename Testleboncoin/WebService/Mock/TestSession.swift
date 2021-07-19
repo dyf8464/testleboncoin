@@ -25,7 +25,11 @@ class TestSession: URLSession {
     fileprivate var tasks: [URL: TestSessionDataTask] = [:]
 
     // MARK: - Mock
-    //Mock Méthode: dataTaskWithUrl
+    /// override method : mock dataTask with Url
+    /// - Parameters:
+    ///   - url: url of data
+    ///   - completionHandler: return of result : Data, URLResponse, Error
+    /// - Returns: URLSessionDataTask created
     public override func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let error = NSError(domain: MockError.Domain,
                             code: MockError.Code.NoResponseRegistered.rawValue,
@@ -41,7 +45,8 @@ class TestSession: URLSession {
         return task
     }
 
-    //Mock Class: TestSessionDataTask
+
+    /// Mock Class: TestSessionDataTask
     public class TestSessionDataTask: URLSessionDataTask {
         fileprivate var mockResponse: Response
         fileprivate (set) var called: [String: Response] = [:]
@@ -67,12 +72,26 @@ class TestSession: URLSession {
     }
 
     //Mock Méthode: dataTaskWithRequest
+    /// override function : mock dataTask with Request
+    /// - Parameters:
+    ///   - request: request for get data
+    ///   - completionHandler: return of result : Data, URLResponse, Error
+    /// - Returns: URLSessionDataTask created
     public override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
     -> URLSessionDataTask {
         return self.dataTask(with: request.url!, completionHandler: completionHandler)
     }
 
     // MARK: - Utils
+    /// mock the response
+    /// - Parameters:
+    ///   - url: url of test
+    ///   - data: mock data
+    ///   - statusCode: mock status code
+    ///   - httpVersion: mock httpVersion
+    ///   - headerFields: mock header fields
+    ///   - error: mock error
+    /// - Returns: mock response
     @discardableResult
     func registerTestResponse(_ url: URL,
                               data: Data,
@@ -88,6 +107,11 @@ class TestSession: URLSession {
                                      forKey: url)
     }
 
+    /// get mock response from test url and name method
+    /// - Parameters:
+    ///   - url: test url
+    ///   - methodName: name of method
+    /// - Returns: mock response
     func resumedResponse(_ url: URL, methodName: String = "resume") -> Response? {
         return tasks[url]?.callee(methodName)
     }

@@ -35,7 +35,7 @@ class UIImageTests: XCTestCase {
         session.registerTestResponse(Constants.urlTestImage, data: testImageData)
 
         //When
-        imageView.asynUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil, session: session)
+        imageView.asyncUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil, session: session)
 
         //Then
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -47,12 +47,29 @@ class UIImageTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
+    func testFetchDataWithUrlNil() {
+        //Given
+        let expectation = XCTestExpectation()
+
+        //When
+        imageView.asyncUrlString(nil, imageDefault: testDefaultImage)
+
+        //Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            XCTAssertNotNil(self.imageView.image)
+            XCTAssertEqual(self.imageView.image!.pngData(), self.testDefaultImage!.pngData())
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 10.0)
+    }
+
     func testFetchDataWithUrlNoValidate() {
         //Given
         let expectation = XCTestExpectation()
 
         //When
-        imageView.asynUrlString("", imageDefault: testDefaultImage)
+        imageView.asyncUrlString("", imageDefault: testDefaultImage)
 
         //Then
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -69,7 +86,7 @@ class UIImageTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData, error: TestSession.MockError())
         //When
-        imageView.asynUrlString(Constants.urlTestImage.absoluteString, imageDefault: testDefaultImage, session: session)
+        imageView.asyncUrlString(Constants.urlTestImage.absoluteString, imageDefault: testDefaultImage, session: session)
 
         //Then
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -87,13 +104,15 @@ class UIImageTests: XCTestCase {
         session.registerTestResponse(Constants.urlTestImage, data: testImageData)
 
         // appeler "asynUrlString" pour sauvgarder image dans le cache
-        imageView.asynUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil, session: session)
+        imageView.asyncUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil, session: session)
+
+
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.imageView.image = nil
             //When
             // appeler "asynUrlString" pour récupérer l'image via le cache
-            self.imageView.asynUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil)
+            self.imageView.asyncUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil)
 
             //Then
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

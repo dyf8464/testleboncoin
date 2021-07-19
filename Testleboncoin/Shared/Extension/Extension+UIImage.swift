@@ -8,7 +8,16 @@
 import UIKit
 
 extension UIImageView {
-    func asynUrlString(_ urlString: String, imageDefault: UIImage? = nil, session: URLSession = URLSession.shared) {
+    /// This function download image from url and save into cache
+    /// - Parameter urlString: url of image.
+    /// - Parameter imageDefault: default image.
+    /// - Parameter session: session for asynchronous, the default is : URLSession.shared.
+    func asyncUrlString(_ urlString: String?, imageDefault: UIImage? = nil, session: URLSession = URLSession.shared) {
+        guard let urlString = urlString else {
+            self.image = imageDefault
+            return
+        }
+
         guard let url = URL(string: urlString) else {
             self.image = imageDefault
             return
