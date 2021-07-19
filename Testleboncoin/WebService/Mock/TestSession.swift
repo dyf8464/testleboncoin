@@ -45,7 +45,6 @@ class TestSession: URLSession {
         return task
     }
 
-
     /// Mock Class: TestSessionDataTask
     public class TestSessionDataTask: URLSessionDataTask {
         fileprivate var mockResponse: Response

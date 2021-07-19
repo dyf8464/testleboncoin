@@ -1,0 +1,13 @@
+{
+   "id":1461267313,
+   "category_id":4,
+   "title":"test Title",
+   "description":"test Description",
+   "price":140.00,
+   "images_url":{
+      "small":"https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c.jpg",
+      "thumb":"https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/2c95.jpg"
+   },
+   "creation_date":"2019-11-05T15:56:59+0000",
+   "is_urgent":false
+}

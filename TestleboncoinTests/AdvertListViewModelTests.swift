@@ -46,8 +46,12 @@ class AdvertListViewModelTests: XCTestCase {
             //Test advertList, categories
             XCTAssertEqual(self.sut.advertList!.count, 300)
             XCTAssertEqual(self.sut.categories!.count, 11)
+
             //Test CategoryNameDelegate
             XCTAssertEqual(self.sut.nameCategory(idCategory: 1), "Véhicule")
+
+            //Test nameCateogryVM 
+            XCTAssertEqual(self.sut.advertList![0].nameCateogryVM, "Maison")
             expectation.fulfill()
         },
         alertMessage: {

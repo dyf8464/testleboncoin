@@ -12,10 +12,12 @@ enum ImageAPIResult<T> {
 }
 
 final class ImageHelper {
+
     struct ImageHelperError: Error {
 
     }
 
+    /// cache for save image
     static var imageCache: NSCache<AnyObject, AnyObject>! = NSCache<AnyObject, AnyObject>()
 
     /// Download data from url

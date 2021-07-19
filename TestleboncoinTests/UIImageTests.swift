@@ -106,8 +106,6 @@ class UIImageTests: XCTestCase {
         // appeler "asynUrlString" pour sauvgarder image dans le cache
         imageView.asyncUrlString(Constants.urlTestImage.absoluteString, imageDefault: nil, session: session)
 
-
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.imageView.image = nil
             //When

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-final class AdvertListViewModel {
+final class AdvertListViewModel: CategoryNameDelegate {
     private(set) var categories: [CategoryModel]?
     private(set) var advertList: [AdvertItemModel]?
     var apiProvider = APIProvider()
@@ -99,19 +99,5 @@ final class AdvertListViewModel {
         default:
             return AdvertListViewModel.unKnwonMessage
         }
-    }
-}
-// MARK: - CategoryNameDelegate
-extension AdvertListViewModel: CategoryNameDelegate {
-    /// get name of category by id
-    /// - Parameter idCategory: id of category
-    /// - Returns: name of category
-    func nameCategory(idCategory: Int64) -> String? {
-        if let categoriesFilter = self.categories?.filter({$0.id == idCategory}) {
-            if categoriesFilter.count > 0 {
-                return categoriesFilter[0].name
-            }
-        }
-       return nil
     }
 }

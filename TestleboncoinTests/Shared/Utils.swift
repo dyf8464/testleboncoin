@@ -19,6 +19,8 @@ struct Constants {
     static let testCategoryFileName = "category"
     static let testCategoryErrorFileName = "category_error"
 
+    static let testAdvertItemFileName = "advertItem"
+
     // MARK: - Image
     static let urlTestImage = URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c9563bbe85f12a5dcaeb2c40989182463270404.jpg")!
     static let testImageName = "image_mock"
