@@ -9,10 +9,11 @@ import Foundation
 
 protocol AdvertItemViewModel {
     var titleVM: String {get}
+    var cateogryIdVM: Int64 {get}
     var nameCateogryVM: String {get}
     var descriptionVM: String {get}
     var priceVM: String {get}
-    var creationDateVM: Date? {get}
+    var creationDateVM: Date {get}
     var creationDateStringVM: String {get}
     var isUrgentVM: Bool {get}
     var smallImageUrl: String? {get}
@@ -20,6 +21,9 @@ protocol AdvertItemViewModel {
 }
 
 extension AdvertItemModel: AdvertItemViewModel {
+    var cateogryIdVM: Int64 {
+        categoryId
+    }
 
     var smallImageUrl: String? {
         imagesUrl.small
@@ -49,8 +53,8 @@ extension AdvertItemModel: AdvertItemViewModel {
         return s  + " €"
     }
 
-    var creationDateVM: Date? {
-        creationDate.toDate(withFormat: ConstantsUtils.dateFormatJson)
+    var creationDateVM: Date {
+        creationDate.toDate(withFormat: ConstantsUtils.dateFormatJson) ?? Date()
     }
 
     var creationDateStringVM: String {

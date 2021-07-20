@@ -23,6 +23,9 @@
 		ED2C6EC726A5C47A00BA2CF1 /* advertItem.json in Resources */ = {isa = PBXBuildFile; fileRef = ED2C6EC626A5C47900BA2CF1 /* advertItem.json */; };
 		ED2C6EC926A5D27900BA2CF1 /* ExtensionStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */; };
 		ED2C6ECA26A5D83900BA2CF1 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C83B426A2D75100E24D02 /* Extension+Data.swift */; };
+		ED2C6ECE26A6214C00BA2CF1 /* KEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ECD26A6214C00BA2CF1 /* KEnum.swift */; };
+		ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */; };
+		ED2C6ED226A7178900BA2CF1 /* ExtensionArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */; };
 		ED548EE526A4605D0067B043 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE426A4605D0067B043 /* AlertMessage.swift */; };
 		ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */; };
 		ED548EEA26A470AA0067B043 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE926A470AA0067B043 /* Utils.swift */; };
@@ -91,6 +94,9 @@
 		ED2C6EC426A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertItemViewModelTests.swift; sourceTree = "<group>"; };
 		ED2C6EC626A5C47900BA2CF1 /* advertItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = advertItem.json; sourceTree = "<group>"; };
 		ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStringTests.swift; sourceTree = "<group>"; };
+		ED2C6ECD26A6214C00BA2CF1 /* KEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEnum.swift; sourceTree = "<group>"; };
+		ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
+		ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArrayTests.swift; sourceTree = "<group>"; };
 		ED548EE426A4605D0067B043 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewModelTests.swift; sourceTree = "<group>"; };
 		ED548EE926A470AA0067B043 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 			children = (
 				ED2C6EB226A488D900BA2CF1 /* ImageHelper.swift */,
 				ED2C6EC026A5B48100BA2CF1 /* ConstantsUtils.swift */,
+				ED2C6ECD26A6214C00BA2CF1 /* KEnum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 				ED2C6EBA26A4D1F500BA2CF1 /* UIImageTests.swift */,
 				ED2C6EC426A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift */,
 				ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */,
+				ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */,
 			);
 			path = TestleboncoinTests;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 			children = (
 				ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImage.swift */,
 				ED2C6EC226A5B53D00BA2CF1 /* Extension+String.swift */,
+				ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -631,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6C83AD26A22C8300E24D02 /* AdvertItem.swift in Sources */,
+				ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */,
 				ED6C839926A17B5400E24D02 /* TestSession.swift in Sources */,
 				ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImage.swift in Sources */,
 				ED2C6EBF26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift in Sources */,
@@ -638,6 +648,7 @@
 				ED6C83C026A38D9600E24D02 /* AdvertListViewModel.swift in Sources */,
 				ED6C83BE26A37E5100E24D02 /* CategoryNameDelegate.swift in Sources */,
 				ED6C839026A0D90800E24D02 /* EndPoint.swift in Sources */,
+				ED2C6ECE26A6214C00BA2CF1 /* KEnum.swift in Sources */,
 				ED6C839226A0DECB00E24D02 /* RESTAPIClient.swift in Sources */,
 				ED6C839426A0EB8D00E24D02 /* APIProvider.swift in Sources */,
 				ED6C835C26A06FDB00E24D02 /* AdvertListViewController.swift in Sources */,
@@ -658,6 +669,7 @@
 				ED6C836F26A06FDE00E24D02 /* TestSessionTests.swift in Sources */,
 				ED6C83A826A21F6B00E24D02 /* APIProviderTests.swift in Sources */,
 				ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */,
+				ED2C6ED226A7178900BA2CF1 /* ExtensionArrayTests.swift in Sources */,
 				ED2C6ECA26A5D83900BA2CF1 /* Extension+Data.swift in Sources */,
 				ED2C6EC526A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift in Sources */,
 				ED2C6EBB26A4D1F500BA2CF1 /* UIImageTests.swift in Sources */,

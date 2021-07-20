@@ -35,6 +35,7 @@ class AdvertListViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
+    // MARK: - Tests
     func testFetchDataReturnSuccess() {
         //Given
         let expectation = XCTestExpectation()
@@ -43,15 +44,21 @@ class AdvertListViewModelTests: XCTestCase {
         //When
         sut.fetchData(success: {
             //Then
-            //Test advertList, categories
+            //Test advertList, categories, advertListVM
             XCTAssertEqual(self.sut.advertList!.count, 300)
-            XCTAssertEqual(self.sut.categories!.count, 11)
+            XCTAssertEqual(self.sut.advertListVM!.count, 300)
+            XCTAssertEqual(self.sut.categories!.count, 12)
 
-            //Test CategoryNameDelegate
-            XCTAssertEqual(self.sut.nameCategory(idCategory: 1), "Véhicule")
+            //Test sorted by date
+            XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
 
-            //Test nameCateogryVM 
-            XCTAssertEqual(self.sut.advertList![0].nameCateogryVM, "Maison")
+            //Test insert last categorie in array
+            XCTAssertEqual(self.sut.categories!.last?.id, -1)
+
+            //Test advertItem.delegate is not nil
+            for advertItem in self.sut.advertList! {
+                XCTAssertNotNil(advertItem.delegate)
+            }
             expectation.fulfill()
         },
         alertMessage: {
@@ -120,4 +127,151 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
+    func testSortByDateWithAscending() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.fetchData(success: {
+            //When
+            self.sut.sortByDate(sortDate: .ascending) {
+                //Then
+                XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
+                XCTAssertTrue(self.advertListVMIsSortedByDate(list: self.sut.advertListVM!, sortType: .ascending))
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            //Then
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testSortByDateWithDescending() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.fetchData(success: {
+            //When
+            self.sut.sortByDate(sortDate: .descending) {
+                //Then
+                XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
+                XCTAssertTrue(self.advertListVMIsSortedByDate(list: self.sut.advertListVM!, sortType: .descending))
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            //Then
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testFilterByIdCategoryAndSortByDateAscending() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.sortByDateCreated = .ascending
+        sut.fetchData(success: {
+            //When
+            self.sut.filterByIdCategoryAndSortByDate(1) {
+                //Then
+                XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
+                XCTAssertTrue(self.advertListVMIsSortedByDate(list: self.sut.advertListVM!, sortType: .ascending))
+                let advertListVMFilter = self.sut.advertListVM?.filter {$0.cateogryIdVM != 1}
+                XCTAssertEqual(advertListVMFilter?.count, 0)
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            //Then
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func testFilterByIdCategoryAndSortByDateDescending() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.sortByDateCreated = .descending
+        sut.fetchData(success: {
+            //When
+            self.sut.filterByIdCategoryAndSortByDate(1) {
+                //Then
+                XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
+                XCTAssertTrue(self.advertListVMIsSortedByDate(list: self.sut.advertListVM!, sortType: .descending))
+                let advertListVMFilter = self.sut.advertListVM?.filter {$0.cateogryIdVM != 1}
+                XCTAssertEqual(advertListVMFilter?.count, 0)
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            //Then
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    // MARK: - function private
+    /// check advertListVM is sorted by urgent
+    /// - Parameter list: list should be checked
+    /// - Returns: list is sorted or no
+    private func advertListVMIsSortedByUrgent(list: [AdvertItemViewModel]) -> Bool {
+        let listBool = list.map {$0.isUrgentVM}
+        if listBool.count == 0 {
+            return true
+        }
+
+        guard let lastTrue = listBool.lastIndex(of: true), let firstFalse = listBool.firstIndex(of: false) else {
+            return true
+        }
+
+        return lastTrue < firstFalse
+    }
+
+    /// check advertListVM is sorted by date
+    /// - Parameters:
+    ///   - list: list should be checked
+    ///   - sortType: type of sort
+    /// - Returns: list is sorted or no
+    private func advertListVMIsSortedByDate(list: [AdvertItemViewModel], sortType: KEnum.SortByDate) -> Bool {
+        let listBool = list.map {$0.isUrgentVM}
+        if listBool.count == 0 {
+            return true
+        }
+
+        guard let lastTrue = listBool.lastIndex(of: true) else {
+            return true
+        }
+
+        var result = true
+        let subListTrue = list[0...lastTrue]
+        let subListFalse = list[lastTrue + 1..<list.count]
+        switch sortType {
+        case .ascending:
+            result = subListTrue.map {$0.creationDateVM}.isAscending()
+            result = subListFalse.map {$0.creationDateVM}.isAscending()
+        case .descending:
+            result = subListTrue.map {$0.creationDateVM}.isDescending()
+            result = subListFalse.map {$0.creationDateVM}.isDescending()
+        }
+        return result
+    }
 }
