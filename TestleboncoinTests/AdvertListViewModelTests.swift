@@ -251,6 +251,27 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
+    // MARK: - AdvertListDataSource
+    func testCellListVMReturnCorrectly() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.fetchData(success: {
+            //When
+            let cellListVM = self.sut.cellListVM
+
+            XCTAssertEqual(cellListVM as? [AdvertItemModel], self.sut.advertListVM as? [AdvertItemModel])
+            expectation.fulfill()
+        },
+        alertMessage: {
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
     // MARK: - function private
     /// check advertListVM is sorted by urgent
     /// - Parameter list: list should be checked
