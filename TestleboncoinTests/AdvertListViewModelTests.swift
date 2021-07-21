@@ -231,15 +231,16 @@ class AdvertListViewModelTests: XCTestCase {
         })
         wait(for: [expectation], timeout: 10.0)
     }
-    // MARK: - Tests list data source
-    func testCountCellNoZero() {
+    // MARK: - NameCategory delegate
+    func testNameCategoryReturnNil() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
         sut.fetchData(success: {
             //When
-
+            let nameCategory = self.sut.nameCategory(idCategory: -20)
+            XCTAssertNil(nameCategory)
             expectation.fulfill()
         },
         alertMessage: {
@@ -249,7 +250,6 @@ class AdvertListViewModelTests: XCTestCase {
         })
         wait(for: [expectation], timeout: 10.0)
     }
-
 
     // MARK: - function private
     /// check advertListVM is sorted by urgent

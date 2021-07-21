@@ -45,7 +45,8 @@ class AdvertListDataSourceTests: XCTestCase {
         XCTAssertEqual(count, 0)
     }
 
-    func testAdvertItemViewModelIndexPathReturnNoEmpty() throws {
+    //found AdvertItemViewModel by IndexPath
+    func testAdvertItemViewModelIndexPathReturnSuccess() throws {
         //Given
         let list = try JSONDecoder().decode([AdvertItemModel].self, from: Data(contentsOf: url))
         sut.cellListVM = list
@@ -57,12 +58,26 @@ class AdvertListDataSourceTests: XCTestCase {
         XCTAssertEqual(advertItemViewModel.titleVM, "Statue homme noir assis en plâtre polychrome")
     }
 
-    func testAdvertItemViewModelIndexPathReturnNewAdvertItemModel() throws {
+    //return new AdvertItemModel() when cellListVM = nil
+    func testAdvertItemViewModelIndexPath_CellListVM_Nil_ReturnNewAdvertItemModel() throws {
         //Given
         sut.cellListVM = nil
 
         //When
         let advertItemModel = sut.advertItemViewModel(indexPath: IndexPath(row: 0, section: 0)) as? AdvertItemModel
+
+        //Then
+        XCTAssertEqual(advertItemModel!, AdvertItemModel())
+    }
+
+    //return new AdvertItemModel() when indexPath.row >= cellListVM.count
+    func testAdvertItemViewModelIndexPath_index_out_of_range_ReturnNewAdvertItemModel() throws {
+        //Given
+        let list = try JSONDecoder().decode([AdvertItemModel].self, from: Data(contentsOf: url))
+        sut.cellListVM = list
+
+        //When
+        let advertItemModel = sut.advertItemViewModel(indexPath: IndexPath(row: 400, section: 0)) as? AdvertItemModel
 
         //Then
         XCTAssertEqual(advertItemModel!, AdvertItemModel())
