@@ -5,7 +5,7 @@
    "description":"test Description",
    "price":140.00,
    "images_url":{
-      "small":"https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c.jpg",
+      "small":"https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c9563bbe85f12a5dcaeb2c40989182463270404.jpg",
       "thumb":"https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/2c95.jpg"
    },
    "creation_date":"2019-11-05T15:56:59+0000",

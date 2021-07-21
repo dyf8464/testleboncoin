@@ -9,28 +9,18 @@ import Foundation
 
 protocol AdvertItemViewModel {
     var titleVM: String {get}
-    var cateogryIdVM: Int64 {get}
     var nameCateogryVM: String {get}
-    var descriptionVM: String {get}
     var priceVM: String {get}
     var creationDateVM: Date {get}
     var creationDateStringVM: String {get}
     var isUrgentVM: Bool {get}
     var smallImageUrl: String? {get}
-    var bigImageUrl: String? {get}
 }
 
 extension AdvertItemModel: AdvertItemViewModel {
-    var cateogryIdVM: Int64 {
-        categoryId
-    }
 
     var smallImageUrl: String? {
         imagesUrl.small
-    }
-
-    var bigImageUrl: String? {
-        imagesUrl.thumb
     }
 
     var titleVM: String {
@@ -42,10 +32,6 @@ extension AdvertItemModel: AdvertItemViewModel {
             return ""
         }
         return delegate.nameCategory(idCategory: categoryId) ?? ""
-    }
-
-    var descriptionVM: String {
-        description
     }
 
     var priceVM: String {

@@ -11,10 +11,10 @@
 		38EF9F3493146C0E0280B335 /* Pods_testleboncoin_testleboncoinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C748E248015A4BE4DA43929 /* Pods_testleboncoin_testleboncoinUITests.framework */; };
 		EBBC796D01A6642BE9747CCD /* Pods_testleboncoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83700150374B7C42ED107A3 /* Pods_testleboncoinTests.framework */; };
 		ED2C6EB326A488D900BA2CF1 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EB226A488D900BA2CF1 /* ImageHelper.swift */; };
-		ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImage.swift */; };
+		ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImageView.swift */; };
 		ED2C6EB726A4C69200BA2CF1 /* ImageHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */; };
 		ED2C6EB926A4C71700BA2CF1 /* image_mock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED2C6EB826A4C71700BA2CF1 /* image_mock.jpg */; };
-		ED2C6EBB26A4D1F500BA2CF1 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EBA26A4D1F500BA2CF1 /* UIImageTests.swift */; };
+		ED2C6EBB26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */; };
 		ED2C6EBD26A4DDCE00BA2CF1 /* image_default_mock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED2C6EBC26A4DDCE00BA2CF1 /* image_default_mock.jpg */; };
 		ED2C6EBF26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EBE26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift */; };
 		ED2C6EC126A5B48100BA2CF1 /* ConstantsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EC026A5B48100BA2CF1 /* ConstantsUtils.swift */; };
@@ -26,6 +26,12 @@
 		ED2C6ECE26A6214C00BA2CF1 /* KEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ECD26A6214C00BA2CF1 /* KEnum.swift */; };
 		ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */; };
 		ED2C6ED226A7178900BA2CF1 /* ExtensionArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */; };
+		ED2C6ED426A7615300BA2CF1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ED326A7615300BA2CF1 /* Extension+UIView.swift */; };
+		ED2C6ED626A770DC00BA2CF1 /* AdvertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6ED526A770DC00BA2CF1 /* AdvertCell.swift */; };
+		ED2C6EDB26A774DE00BA2CF1 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EDA26A774DE00BA2CF1 /* Extension+UIColor.swift */; };
+		ED2C6EE026A853CB00BA2CF1 /* AdvertListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */; };
+		ED2C6EE226A857C700BA2CF1 /* AdvertListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */; };
+		ED2C6EE626A85E8200BA2CF1 /* AdvertCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */; };
 		ED548EE526A4605D0067B043 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE426A4605D0067B043 /* AlertMessage.swift */; };
 		ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */; };
 		ED548EEA26A470AA0067B043 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE926A470AA0067B043 /* Utils.swift */; };
@@ -83,10 +89,10 @@
 		B44B9F41A6AEA041681884F5 /* Pods-testleboncoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testleboncoinTests.release.xcconfig"; path = "Target Support Files/Pods-testleboncoinTests/Pods-testleboncoinTests.release.xcconfig"; sourceTree = "<group>"; };
 		D83700150374B7C42ED107A3 /* Pods_testleboncoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testleboncoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2C6EB226A488D900BA2CF1 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelperTests.swift; sourceTree = "<group>"; };
 		ED2C6EB826A4C71700BA2CF1 /* image_mock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_mock.jpg; sourceTree = "<group>"; };
-		ED2C6EBA26A4D1F500BA2CF1 /* UIImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
+		ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageViewTests.swift; sourceTree = "<group>"; };
 		ED2C6EBC26A4DDCE00BA2CF1 /* image_default_mock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_default_mock.jpg; sourceTree = "<group>"; };
 		ED2C6EBE26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertItemViewModel.swift; sourceTree = "<group>"; };
 		ED2C6EC026A5B48100BA2CF1 /* ConstantsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsUtils.swift; sourceTree = "<group>"; };
@@ -97,6 +103,12 @@
 		ED2C6ECD26A6214C00BA2CF1 /* KEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEnum.swift; sourceTree = "<group>"; };
 		ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
 		ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArrayTests.swift; sourceTree = "<group>"; };
+		ED2C6ED326A7615300BA2CF1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		ED2C6ED526A770DC00BA2CF1 /* AdvertCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCell.swift; sourceTree = "<group>"; };
+		ED2C6EDA26A774DE00BA2CF1 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListDataSource.swift; sourceTree = "<group>"; };
+		ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListDataSourceTests.swift; sourceTree = "<group>"; };
+		ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCellTests.swift; sourceTree = "<group>"; };
 		ED548EE426A4605D0067B043 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewModelTests.swift; sourceTree = "<group>"; };
 		ED548EE926A470AA0067B043 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -254,10 +266,12 @@
 				ED6C83A726A21F6B00E24D02 /* APIProviderTests.swift */,
 				ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */,
 				ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */,
-				ED2C6EBA26A4D1F500BA2CF1 /* UIImageTests.swift */,
+				ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */,
 				ED2C6EC426A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift */,
 				ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */,
 				ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */,
+				ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */,
+				ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */,
 			);
 			path = TestleboncoinTests;
 			sourceTree = "<group>";
@@ -294,7 +308,7 @@
 		ED6C838A26A0818A00E24D02 /* AdvertList */ = {
 			isa = PBXGroup;
 			children = (
-				ED6C83BC26A37E1900E24D02 /* Delegate */,
+				ED6C83BC26A37E1900E24D02 /* Protocol */,
 				ED6C83AB26A22C3E00E24D02 /* View */,
 				ED6C83AA26A22C3500E24D02 /* ViewModel */,
 				ED6C83A926A22C2600E24D02 /* Model */,
@@ -377,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				ED6C835B26A06FDB00E24D02 /* AdvertListViewController.swift */,
+				ED2C6ED526A770DC00BA2CF1 /* AdvertCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,19 +409,22 @@
 		ED6C83B326A2D72700E24D02 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImage.swift */,
+				ED2C6EB426A49D3E00BA2CF1 /* Extension+UIImageView.swift */,
 				ED2C6EC226A5B53D00BA2CF1 /* Extension+String.swift */,
 				ED2C6ECF26A647AA00BA2CF1 /* Extension+Array.swift */,
+				ED2C6ED326A7615300BA2CF1 /* Extension+UIView.swift */,
+				ED2C6EDA26A774DE00BA2CF1 /* Extension+UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		ED6C83BC26A37E1900E24D02 /* Delegate */ = {
+		ED6C83BC26A37E1900E24D02 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				ED6C83BD26A37E5100E24D02 /* CategoryNameDelegate.swift */,
+				ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */,
 			);
-			path = Delegate;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,8 +659,9 @@
 			files = (
 				ED6C83AD26A22C8300E24D02 /* AdvertItem.swift in Sources */,
 				ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */,
+				ED2C6EDB26A774DE00BA2CF1 /* Extension+UIColor.swift in Sources */,
 				ED6C839926A17B5400E24D02 /* TestSession.swift in Sources */,
-				ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImage.swift in Sources */,
+				ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImageView.swift in Sources */,
 				ED2C6EBF26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift in Sources */,
 				ED2C6EC326A5B53D00BA2CF1 /* Extension+String.swift in Sources */,
 				ED6C83C026A38D9600E24D02 /* AdvertListViewModel.swift in Sources */,
@@ -650,9 +669,12 @@
 				ED6C839026A0D90800E24D02 /* EndPoint.swift in Sources */,
 				ED2C6ECE26A6214C00BA2CF1 /* KEnum.swift in Sources */,
 				ED6C839226A0DECB00E24D02 /* RESTAPIClient.swift in Sources */,
+				ED2C6EE026A853CB00BA2CF1 /* AdvertListDataSource.swift in Sources */,
 				ED6C839426A0EB8D00E24D02 /* APIProvider.swift in Sources */,
 				ED6C835C26A06FDB00E24D02 /* AdvertListViewController.swift in Sources */,
+				ED2C6ED626A770DC00BA2CF1 /* AdvertCell.swift in Sources */,
 				ED6C835826A06FDB00E24D02 /* AppDelegate.swift in Sources */,
+				ED2C6ED426A7615300BA2CF1 /* Extension+UIView.swift in Sources */,
 				ED6C839626A0F07A00E24D02 /* Category.swift in Sources */,
 				ED2C6EC126A5B48100BA2CF1 /* ConstantsUtils.swift in Sources */,
 				ED548EE526A4605D0067B043 /* AlertMessage.swift in Sources */,
@@ -665,14 +687,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED548EEA26A470AA0067B043 /* Utils.swift in Sources */,
+				ED2C6EE626A85E8200BA2CF1 /* AdvertCellTests.swift in Sources */,
 				ED2C6EB726A4C69200BA2CF1 /* ImageHelperTests.swift in Sources */,
 				ED6C836F26A06FDE00E24D02 /* TestSessionTests.swift in Sources */,
 				ED6C83A826A21F6B00E24D02 /* APIProviderTests.swift in Sources */,
 				ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */,
 				ED2C6ED226A7178900BA2CF1 /* ExtensionArrayTests.swift in Sources */,
+				ED2C6EE226A857C700BA2CF1 /* AdvertListDataSourceTests.swift in Sources */,
 				ED2C6ECA26A5D83900BA2CF1 /* Extension+Data.swift in Sources */,
 				ED2C6EC526A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift in Sources */,
-				ED2C6EBB26A4D1F500BA2CF1 /* UIImageTests.swift in Sources */,
+				ED2C6EBB26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift in Sources */,
 				ED6C839F26A18CC000E24D02 /* RESTAPIClientTests.swift in Sources */,
 				ED2C6EC926A5D27900BA2CF1 /* ExtensionStringTests.swift in Sources */,
 			);
@@ -836,6 +860,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7F5MR4AFU;
 				INFOPLIST_FILE = testleboncoin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -856,6 +881,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7F5MR4AFU;
 				INFOPLIST_FILE = testleboncoin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (

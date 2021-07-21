@@ -26,6 +26,7 @@ extension UIImageView {
             self.image = imageFromCache as? UIImage
             return
         }
+        self.image = imageDefault
         ImageHelper.fetchImage(session: session, url: url) { [weak self] reslut in
             guard let self = self else {
                 return
@@ -38,8 +39,8 @@ extension UIImageView {
                 }
                 ImageHelper.imageCache.setObject(imageDownload, forKey: urlString as AnyObject)
                 self.image = imageDownload
-            case .error(_):
-                self.image = imageDefault
+            case .error(let error):
+                print("async image error :\(error)")
             }
         }
     }

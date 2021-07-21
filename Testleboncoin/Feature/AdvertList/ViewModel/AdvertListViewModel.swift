@@ -192,3 +192,10 @@ final class AdvertListViewModel: CategoryNameDelegate {
         }
     }
 }
+
+// MARK: - Protocol AdvertListDataSource
+extension AdvertListViewModel: AdvertListDataSource {
+    var cellListVM: [AdvertItemViewModel]? {
+        self.advertListVM
+    }
+}

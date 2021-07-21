@@ -30,14 +30,12 @@ class AdvertItemViewModelTests: XCTestCase {
 
     func testAdvertItemViewModel() {
         XCTAssertEqual(sut.titleVM, "test Title")
-        XCTAssertEqual(sut.descriptionVM, "test Description")
         XCTAssertEqual(sut.priceVM, "140.00 €")
-        XCTAssertEqual(sut.creationDateStringVM, "05-11-2019 16:56:59")
+        XCTAssertEqual(sut.creationDateStringVM, "05-11-2019 16:56")
         XCTAssertEqual(sut.creationDateVM, "2019-11-05T15:56:59+0000".toDate(withFormat: ConstantsUtils.dateFormatJson))
         XCTAssertEqual(sut.nameCateogryVM, "")
         XCTAssertEqual(sut.isUrgentVM, false)
-        XCTAssertEqual(sut.smallImageUrl, "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c.jpg")
-        XCTAssertEqual(sut.bigImageUrl, "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/2c95.jpg")
+        XCTAssertEqual(sut.smallImageUrl, "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c9563bbe85f12a5dcaeb2c40989182463270404.jpg")
     }
 
     func testAdvertItemViewModelNameCateogryVM() throws {

@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import testleboncoin
-class UIImageTests: XCTestCase {
+class ExtensionUIImageViewTests: XCTestCase {
     let testImageData = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testImageName, ofType: "jpg"))!
     let testDefaultImage = UIImage(data: Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testDefaultImageName, ofType: "jpg"))!)
     var session: TestSession!
@@ -81,7 +81,7 @@ class UIImageTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataWithReturnError() {
+    func testFetchDataReturnError() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData, error: TestSession.MockError())

@@ -39,7 +39,7 @@ class ExtensionStringTests: XCTestCase {
 
     func testStringtoStringWithNewFormatReturnNoNil () {
         //Given
-        let stringExp = "05-11-2019 16:56:59"
+        let stringExp = "05-11-2019 16:56"
         //When
         let stringTest = dateString.toString(withFormat: ConstantsUtils.dateFormatJson, toFormat: ConstantsUtils.dateFormatVM)
         //Then
