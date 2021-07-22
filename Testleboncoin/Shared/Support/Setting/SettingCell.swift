@@ -45,10 +45,10 @@ class SettingCell: UITableViewCell {
     fileprivate func addConstraints() {
         titleLabel.anchor(top: contentView.topAnchor, bottom: contentView.bottomAnchor, leading: contentView.leadingAnchor, trailing: selectImageView.leadingAnchor, padding: .init(top: 5, left: 5, bottom: 5, right: 5))
 
-        selectImageView.anchor(top: nil, bottom: nil, leading: nil, trailing: contentView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 5), size: .init(width: 33, height: 33))
+        selectImageView.anchor(top: nil, bottom: nil, leading: nil, trailing: contentView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 5), size: .init(width: 22, height: 22))
 
         NSLayoutConstraint.activate([
-            selectImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            selectImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
             ])
 
     }

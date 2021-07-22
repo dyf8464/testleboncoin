@@ -138,7 +138,7 @@ class AdvertCell: UITableViewCell {
         titleLabel.anchor(top: nil, bottom: nil, leading: advertInfoContainerView.leadingAnchor, trailing: advertInfoContainerView.trailingAnchor, padding: .init(top: 0, left: 5, bottom: 0, right: 5))
 
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: advertInfoContainerView.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: advertInfoContainerView.centerYAnchor),
             titleLabel.heightAnchor.constraint(equalTo: advertInfoContainerView.heightAnchor, multiplier: 0.5),
             categoryLabel.widthAnchor.constraint(equalTo: advertInfoContainerView.widthAnchor, multiplier: 0.5, constant: -5),
             urgentLabel.widthAnchor.constraint(equalTo: advertInfoContainerView.widthAnchor, multiplier: 0.4, constant: -10),
