@@ -24,7 +24,10 @@ class AdvertListViewController: UITableViewController {
         // Do any additional setup after loading the view.
         self.setupTableView()
         self.configureBarButtonItems()
-        viewModel.fetchData(success: {
+        viewModel.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.tableView.reloadData()
         }, alertMessage: {
            print("\($0)")
