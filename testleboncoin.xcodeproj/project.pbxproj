@@ -286,21 +286,10 @@
 		ED6C836D26A06FDE00E24D02 /* TestleboncoinTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDB610C326A9A79C0047BFAC /* Feature */,
+				EDB610C726AA0F910047BFAC /* Test */,
 				ED548EE826A4707A0067B043 /* Shared */,
 				ED6C83A026A1B7D100E24D02 /* MockData */,
-				ED6C836E26A06FDE00E24D02 /* TestSessionTests.swift */,
-				ED6C839E26A18CC000E24D02 /* RESTAPIClientTests.swift */,
 				ED6C837026A06FDE00E24D02 /* Info.plist */,
-				ED6C83A726A21F6B00E24D02 /* APIProviderTests.swift */,
-				ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */,
-				ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */,
-				ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */,
-				ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */,
-				EDB610BD26A98E060047BFAC /* SettingCellModelTests.swift */,
-				EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */,
-				EDB610C126A9A7840047BFAC /* SettingCellTest.swift */,
-				EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */,
 			);
 			path = TestleboncoinTests;
 			sourceTree = "<group>";
@@ -459,6 +448,7 @@
 		EDB610C326A9A79C0047BFAC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				EDB610C826AA0FAE0047BFAC /* Settting */,
 				EDB610C426A9A7B10047BFAC /* AdvertList */,
 			);
 			path = Feature;
@@ -473,6 +463,48 @@
 				ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */,
 			);
 			path = AdvertList;
+			sourceTree = "<group>";
+		};
+		EDB610C726AA0F910047BFAC /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				EDB610CA26AA0FE40047BFAC /* API */,
+				EDB610C926AA0FD00047BFAC /* Extension */,
+				EDB610C326A9A79C0047BFAC /* Feature */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		EDB610C826AA0FAE0047BFAC /* Settting */ = {
+			isa = PBXGroup;
+			children = (
+				EDB610BD26A98E060047BFAC /* SettingCellModelTests.swift */,
+				EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */,
+				EDB610C126A9A7840047BFAC /* SettingCellTest.swift */,
+				EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */,
+			);
+			path = Settting;
+			sourceTree = "<group>";
+		};
+		EDB610C926AA0FD00047BFAC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */,
+				ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */,
+				ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EDB610CA26AA0FE40047BFAC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C836E26A06FDE00E24D02 /* TestSessionTests.swift */,
+				ED6C839E26A18CC000E24D02 /* RESTAPIClientTests.swift */,
+				ED6C83A726A21F6B00E24D02 /* APIProviderTests.swift */,
+				ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
