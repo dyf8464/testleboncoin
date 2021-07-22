@@ -7,10 +7,9 @@
 
 import UIKit
 
-
 extension UIView {
 
-    /// configuration Anchor and size
+    /// configure Anchor and size
     /// - Parameters:
     ///   - top: top anchor
     ///   - bottom: bottom achor
@@ -19,7 +18,6 @@ extension UIView {
     ///   - padding: achor constants (top, bottom, left, right)
     ///   - size: widthAnchor and heightAnchor
     func anchor(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
-
 
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
@@ -37,7 +35,6 @@ extension UIView {
             trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
         }
 
-
         if size.width != 0 {
             widthAnchor.constraint(equalToConstant: size.width).isActive = true
         }
@@ -50,7 +47,7 @@ extension UIView {
     /// set cornerRadius 
     /// - Parameter radius: number radius
     func setRadius(_ radius: CGFloat? = nil) {
-        self.layer.cornerRadius = radius ?? self.frame.width / 2;
-        self.layer.masksToBounds = true;
+        self.layer.cornerRadius = radius ?? self.frame.width / 2
+        self.layer.masksToBounds = true
     }
 }

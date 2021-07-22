@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationViewController
         window?.makeKeyAndVisible()
 
+        //configure navigation bar
+        UINavigationBar.appearance().barTintColor = .leboncoinOrange
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+
         return true
     }
 }

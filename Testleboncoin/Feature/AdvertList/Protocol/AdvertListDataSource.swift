@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol AdvertListDataSource {
 
     var cellListVM: [AdvertItemViewModel]? {get}
@@ -20,7 +19,7 @@ protocol AdvertListDataSource {
 }
 
 extension AdvertListDataSource {
-    /// get count of table cell
+    /// get count of tableviewcell
     func countCell() -> Int {
         return self.cellListVM?.count ?? 0
     }

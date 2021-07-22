@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 import UIKit
 
 class AdvertCell: UITableViewCell {
@@ -92,7 +91,7 @@ class AdvertCell: UITableViewCell {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -117,18 +116,6 @@ class AdvertCell: UITableViewCell {
                 cellBackground.backgroundColor = color
             }
         }
-    }
-
-    /// load all elements UI from AdvertItemViewModel
-    /// - Parameter viewModel: data source for load UI
-    /// - Parameter session: session for async image
-    func loadViewModel(viewModel: AdvertItemViewModel, session: URLSession = URLSession.shared) {
-        titleLabel.text = viewModel.titleVM
-        categoryLabel.text = viewModel.nameCateogryVM
-        priceLabel.text = viewModel.priceVM
-        dateLabel.text = viewModel.creationDateStringVM
-        urgentLabel.isHidden = !viewModel.isUrgentVM
-        advertImageView.asyncUrlString(viewModel.smallImageUrl, imageDefault: AdvertCell.imageDefault, session: session)
     }
 
     // MARK: - Constraints and Add Subview Functions
@@ -169,6 +156,19 @@ class AdvertCell: UITableViewCell {
         [categoryLabel, priceLabel, titleLabel, dateLabel, urgentLabel].forEach {
             advertInfoContainerView.addSubview($0)
         }
+    }
+
+    // MARK: - Load data
+    /// load all elements UI from AdvertItemViewModel
+    /// - Parameter viewModel: data source for load UI
+    /// - Parameter session: session for async image
+    func loadViewModel(viewModel: AdvertItemViewModel, session: URLSession = URLSession.shared) {
+        titleLabel.text = viewModel.titleVM
+        categoryLabel.text = viewModel.nameCateogryVM
+        priceLabel.text = viewModel.priceVM
+        dateLabel.text = viewModel.creationDateStringVM
+        urgentLabel.isHidden = !viewModel.isUrgentVM
+        advertImageView.asyncUrlString(viewModel.smallImageUrl, imageDefault: AdvertCell.imageDefault, session: session)
     }
 
 }

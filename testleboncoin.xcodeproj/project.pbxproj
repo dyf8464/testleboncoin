@@ -32,6 +32,10 @@
 		ED2C6EE026A853CB00BA2CF1 /* AdvertListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */; };
 		ED2C6EE226A857C700BA2CF1 /* AdvertListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */; };
 		ED2C6EE626A85E8200BA2CF1 /* AdvertCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */; };
+		ED2C6EFC26A8D30100BA2CF1 /* SettingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EFA26A8CED900BA2CF1 /* SettingCellModel.swift */; };
+		ED2C6EFD26A8D30600BA2CF1 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EF826A8CE7D00BA2CF1 /* SettingCell.swift */; };
+		ED2C6EFE26A8D30A00BA2CF1 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EF626A8CE4200BA2CF1 /* SettingViewModel.swift */; };
+		ED2C6EFF26A8D30E00BA2CF1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C6EF426A8CE3400BA2CF1 /* SettingView.swift */; };
 		ED548EE526A4605D0067B043 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE426A4605D0067B043 /* AlertMessage.swift */; };
 		ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */; };
 		ED548EEA26A470AA0067B043 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED548EE926A470AA0067B043 /* Utils.swift */; };
@@ -59,6 +63,10 @@
 		ED6C83B826A3723300E24D02 /* advertList_error.json in Resources */ = {isa = PBXBuildFile; fileRef = ED6C83B626A371E800E24D02 /* advertList_error.json */; };
 		ED6C83BE26A37E5100E24D02 /* CategoryNameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C83BD26A37E5100E24D02 /* CategoryNameDelegate.swift */; };
 		ED6C83C026A38D9600E24D02 /* AdvertListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C83BF26A38D9600E24D02 /* AdvertListViewModel.swift */; };
+		EDB610BE26A98E060047BFAC /* SettingCellModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610BD26A98E060047BFAC /* SettingCellModelTests.swift */; };
+		EDB610C026A993030047BFAC /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */; };
+		EDB610C226A9A7840047BFAC /* SettingCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610C126A9A7840047BFAC /* SettingCellTest.swift */; };
+		EDB610C626A9AFA10047BFAC /* SettingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +117,10 @@
 		ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListDataSource.swift; sourceTree = "<group>"; };
 		ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListDataSourceTests.swift; sourceTree = "<group>"; };
 		ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertCellTests.swift; sourceTree = "<group>"; };
+		ED2C6EF426A8CE3400BA2CF1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		ED2C6EF626A8CE4200BA2CF1 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		ED2C6EF826A8CE7D00BA2CF1 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		ED2C6EFA26A8CED900BA2CF1 /* SettingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellModel.swift; sourceTree = "<group>"; };
 		ED548EE426A4605D0067B043 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewModelTests.swift; sourceTree = "<group>"; };
 		ED548EE926A470AA0067B043 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -139,6 +151,10 @@
 		ED6C83B626A371E800E24D02 /* advertList_error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = advertList_error.json; sourceTree = "<group>"; };
 		ED6C83BD26A37E5100E24D02 /* CategoryNameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameDelegate.swift; sourceTree = "<group>"; };
 		ED6C83BF26A38D9600E24D02 /* AdvertListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertListViewModel.swift; sourceTree = "<group>"; };
+		EDB610BD26A98E060047BFAC /* SettingCellModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellModelTests.swift; sourceTree = "<group>"; };
+		EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
+		EDB610C126A9A7840047BFAC /* SettingCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellTest.swift; sourceTree = "<group>"; };
+		EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,9 +218,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		ED2C6EF126A8CD9000BA2CF1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C6EF426A8CE3400BA2CF1 /* SettingView.swift */,
+				ED2C6EF626A8CE4200BA2CF1 /* SettingViewModel.swift */,
+				ED2C6EF826A8CE7D00BA2CF1 /* SettingCell.swift */,
+				ED2C6EFA26A8CED900BA2CF1 /* SettingCellModel.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		ED548EE326A4604E0067B043 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C6EF126A8CD9000BA2CF1 /* Setting */,
 				ED548EE426A4605D0067B043 /* AlertMessage.swift */,
 			);
 			path = Support;
@@ -258,20 +286,21 @@
 		ED6C836D26A06FDE00E24D02 /* TestleboncoinTests */ = {
 			isa = PBXGroup;
 			children = (
+				EDB610C326A9A79C0047BFAC /* Feature */,
 				ED548EE826A4707A0067B043 /* Shared */,
 				ED6C83A026A1B7D100E24D02 /* MockData */,
 				ED6C836E26A06FDE00E24D02 /* TestSessionTests.swift */,
 				ED6C839E26A18CC000E24D02 /* RESTAPIClientTests.swift */,
 				ED6C837026A06FDE00E24D02 /* Info.plist */,
 				ED6C83A726A21F6B00E24D02 /* APIProviderTests.swift */,
-				ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */,
 				ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */,
 				ED2C6EBA26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift */,
-				ED2C6EC426A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift */,
 				ED2C6EC826A5D27900BA2CF1 /* ExtensionStringTests.swift */,
 				ED2C6ED126A7178900BA2CF1 /* ExtensionArrayTests.swift */,
-				ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */,
-				ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */,
+				EDB610BD26A98E060047BFAC /* SettingCellModelTests.swift */,
+				EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */,
+				EDB610C126A9A7840047BFAC /* SettingCellTest.swift */,
+				EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */,
 			);
 			path = TestleboncoinTests;
 			sourceTree = "<group>";
@@ -425,6 +454,25 @@
 				ED2C6EDF26A853CB00BA2CF1 /* AdvertListDataSource.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		EDB610C326A9A79C0047BFAC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				EDB610C426A9A7B10047BFAC /* AdvertList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		EDB610C426A9A7B10047BFAC /* AdvertList */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C6EC426A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift */,
+				ED548EE626A467C40067B043 /* AdvertListViewModelTests.swift */,
+				ED2C6EE126A857C700BA2CF1 /* AdvertListDataSourceTests.swift */,
+				ED2C6EE526A85E8200BA2CF1 /* AdvertCellTests.swift */,
+			);
+			path = AdvertList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -659,7 +707,10 @@
 			files = (
 				ED6C83AD26A22C8300E24D02 /* AdvertItem.swift in Sources */,
 				ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */,
+				ED2C6EFD26A8D30600BA2CF1 /* SettingCell.swift in Sources */,
+				ED2C6EFC26A8D30100BA2CF1 /* SettingCellModel.swift in Sources */,
 				ED2C6EDB26A774DE00BA2CF1 /* Extension+UIColor.swift in Sources */,
+				ED2C6EFE26A8D30A00BA2CF1 /* SettingViewModel.swift in Sources */,
 				ED6C839926A17B5400E24D02 /* TestSession.swift in Sources */,
 				ED2C6EB526A49D3E00BA2CF1 /* Extension+UIImageView.swift in Sources */,
 				ED2C6EBF26A5A7DF00BA2CF1 /* AdvertItemViewModel.swift in Sources */,
@@ -675,6 +726,7 @@
 				ED2C6ED626A770DC00BA2CF1 /* AdvertCell.swift in Sources */,
 				ED6C835826A06FDB00E24D02 /* AppDelegate.swift in Sources */,
 				ED2C6ED426A7615300BA2CF1 /* Extension+UIView.swift in Sources */,
+				ED2C6EFF26A8D30E00BA2CF1 /* SettingView.swift in Sources */,
 				ED6C839626A0F07A00E24D02 /* Category.swift in Sources */,
 				ED2C6EC126A5B48100BA2CF1 /* ConstantsUtils.swift in Sources */,
 				ED548EE526A4605D0067B043 /* AlertMessage.swift in Sources */,
@@ -689,15 +741,19 @@
 				ED548EEA26A470AA0067B043 /* Utils.swift in Sources */,
 				ED2C6EE626A85E8200BA2CF1 /* AdvertCellTests.swift in Sources */,
 				ED2C6EB726A4C69200BA2CF1 /* ImageHelperTests.swift in Sources */,
+				EDB610C026A993030047BFAC /* SettingViewModelTests.swift in Sources */,
 				ED6C836F26A06FDE00E24D02 /* TestSessionTests.swift in Sources */,
 				ED6C83A826A21F6B00E24D02 /* APIProviderTests.swift in Sources */,
 				ED548EE726A467C40067B043 /* AdvertListViewModelTests.swift in Sources */,
 				ED2C6ED226A7178900BA2CF1 /* ExtensionArrayTests.swift in Sources */,
 				ED2C6EE226A857C700BA2CF1 /* AdvertListDataSourceTests.swift in Sources */,
+				EDB610C626A9AFA10047BFAC /* SettingViewTests.swift in Sources */,
 				ED2C6ECA26A5D83900BA2CF1 /* Extension+Data.swift in Sources */,
 				ED2C6EC526A5BCCE00BA2CF1 /* AdvertItemViewModelTests.swift in Sources */,
 				ED2C6EBB26A4D1F500BA2CF1 /* ExtensionUIImageViewTests.swift in Sources */,
 				ED6C839F26A18CC000E24D02 /* RESTAPIClientTests.swift in Sources */,
+				EDB610BE26A98E060047BFAC /* SettingCellModelTests.swift in Sources */,
+				EDB610C226A9A7840047BFAC /* SettingCellTest.swift in Sources */,
 				ED2C6EC926A5D27900BA2CF1 /* ExtensionStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

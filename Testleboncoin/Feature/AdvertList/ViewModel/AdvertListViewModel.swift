@@ -7,15 +7,10 @@
 
 import Foundation
 final class AdvertListViewModel: CategoryNameDelegate {
-    /// list of categories
-    private(set) var categories: [CategoryModel]? {
-        didSet {
-            //add new category(name: "all categories") into the list for function filter
-            let allCategory = CategoryModel(id: idAllCategory, name: "tous les catégories")
-            categories?.append(allCategory)
-        }
-    }
-    /// list of adverts from aynchro
+    /// list of categories from asynchronous
+    private(set) var categories: [CategoryModel]?
+
+    /// list of adverts from asynchronous
     private(set) var advertList: [AdvertItemModel]?
 
     /// list of adverts for display
@@ -27,8 +22,14 @@ final class AdvertListViewModel: CategoryNameDelegate {
     /// provider for all asynchronous tasks
     var apiProvider = APIProvider()
 
-    /// indice of sort date
-    var sortByDateCreated: KEnum.SortByDate?
+    ///  type selected for sort by date
+    var sortByDateSelected: KEnum.SortByDate?
+
+    /// category selected for filter la list items
+    private(set) var filterCategorySelected: CategoryModel?
+
+    /// viewModel for filter by category
+    private(set) var filterCategoryViewModel: SettingViewModel?
 
     /// error message for wrong status code
     static let badResponseMessage: AlertMessage =
@@ -94,7 +95,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
             case let .success(advertList) :
                 self.advertList = advertList
                 DispatchQueue.global().async {
-                    self.configurationAdvertListDelegate()
+                    self.configureAdvertListDelegate()
                     self.advertListVM = self.advertList
                     self.sortAdvertListVMByUrgent()
                     DispatchQueue.main.sync {
@@ -108,23 +109,36 @@ final class AdvertListViewModel: CategoryNameDelegate {
     }
 
     // MARK: - Utils
-    /// configuration delegate for all element of list
-    private func configurationAdvertListDelegate() {
+    /// configure delegate for all element of list
+    private func configureAdvertListDelegate() {
         self.advertList?.forEach {
             $0.delegate = self
         }
     }
 
+    /// convert Error to AlertMessage
+    private func alertMesssage(error: Error) -> AlertMessage {
+        switch error {
+        case APIError.jsonDecoder:
+            return AdvertListViewModel.jsonDecoderMessage
+        case APIError.badResponse:
+            return AdvertListViewModel.badResponseMessage
+        default:
+            return AdvertListViewModel.unKnwonMessage
+        }
+    }
+
+    // MARK: - Sort
     /// sort advertListVM by urgent
     private func sortAdvertListVMByUrgent() {
         self.advertListVM?.sort {
             $0.isUrgentVM && !$1.isUrgentVM
         }
     }
-
    /// sort advertListVM by date
     private func sortByDate() {
-        guard let sortByDateCreated = sortByDateCreated  else {
+        guard let sortByDateCreated = sortByDateSelected  else {
+            sortAdvertListVMByUrgent()
             return
         }
 
@@ -152,7 +166,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
     ///   - completion: action after sort
     func sortByDate(sortDate: KEnum.SortByDate, completion:@escaping() -> Void) {
         DispatchQueue.global().async {
-            self.sortByDateCreated = sortDate
+            self.sortByDateSelected = sortDate
             self.sortByDate()
             DispatchQueue.main.sync {
                 completion()
@@ -160,12 +174,14 @@ final class AdvertListViewModel: CategoryNameDelegate {
         }
     }
 
+    // MARK: - Filter
     /// filter advertListVM by id of category and sort by date
     /// - Parameters:
     ///   - idCategory: id of Cateogry for filter
     ///   - completion: action after filter and sort
     func filterByIdCategoryAndSortByDate(_ idCategory: Int64, completion:@escaping() -> Void) {
         DispatchQueue.global().async {
+            //reinit advertListVM when idAllCategory is selected
             if idCategory == self.idAllCategory {
                 self.advertListVM = self.advertList
             } else {
@@ -173,6 +189,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
                     $0.categoryId == idCategory
                 }
             }
+            //sort by date
             self.sortByDate()
             DispatchQueue.main.sync {
                 completion()
@@ -180,17 +197,45 @@ final class AdvertListViewModel: CategoryNameDelegate {
         }
     }
 
-    /// convert Error to AlertMessage
-    private func alertMesssage(error: Error) -> AlertMessage {
-        switch error {
-        case APIError.jsonDecoder:
-            return AdvertListViewModel.jsonDecoderMessage
-        case APIError.badResponse:
-            return AdvertListViewModel.badResponseMessage
-        default:
-            return AdvertListViewModel.unKnwonMessage
+    /// display filter view
+    /// - Parameter completion: action after filter by category
+    func displayFilterCategoryView(settingView: SettingView = SettingView.shared, completion:@escaping () -> Void) {
+        self.filterCategoryViewModel = createFilterCategoryViewModel(completion: completion)
+        guard let filterCategoryViewModel = self.filterCategoryViewModel else {
+            return
         }
+        settingView.showSettings(viewModel: filterCategoryViewModel)
     }
+
+    /// create viewModel for filter view
+    /// - Parameter completion: action after filter by category
+    private func createFilterCategoryViewModel(completion:@escaping () -> Void) -> SettingViewModel? {
+        guard var categories = self.categories
+        else {
+            return nil
+        }
+        let titleFilter = "Filtrer par"
+        //insert new category(name: "all categories") into the list at first poistion
+        let allCategory = CategoryModel(id: idAllCategory, name: "Tous les catégories")
+        categories.insert(allCategory, at: 0)
+
+        //init SettingViewModel
+        let settingViewModel = SettingViewModel(cellModelList: categories, title: titleFilter, cellModelSelected: self.filterCategorySelected) {
+            //get SettingModelView selected and index selected after select a category in filterView
+            [weak self] settingModelViewSelected, indexSelected in
+
+            guard let self = self, let categoryModel = settingModelViewSelected as? CategoryModel else {
+                return
+            }
+            //save categoryModel selected
+            self.filterCategorySelected = categoryModel
+
+            //action filter list item by id of Category selected
+            self.filterByIdCategoryAndSortByDate(categoryModel.id, completion: completion)
+        }
+       return settingViewModel
+    }
+
 }
 
 // MARK: - Protocol AdvertListDataSource

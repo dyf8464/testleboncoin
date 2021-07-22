@@ -10,13 +10,13 @@ import XCTest
 class AdvertListViewModelTests: XCTestCase {
 
     var sut: AdvertListViewModel!
-
     //mock data
     let dataAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json"))!
     let dataErrorAdvertList = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testAdvertListErrorFileName, ofType: "json"))!
     let dataCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json"))!
     let dataErrorCategories = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testCategoryErrorFileName, ofType: "json"))!
     var session: TestSession!
+    let windows = UIWindow()
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -47,13 +47,10 @@ class AdvertListViewModelTests: XCTestCase {
             //Test advertList, categories, advertListVM
             XCTAssertEqual(self.sut.advertList!.count, 300)
             XCTAssertEqual(self.sut.advertListVM!.count, 300)
-            XCTAssertEqual(self.sut.categories!.count, 12)
+            XCTAssertEqual(self.sut.categories!.count, 11)
 
             //Test sorted by date
             XCTAssertTrue(self.advertListVMIsSortedByUrgent(list: self.sut.advertListVM!))
-
-            //Test insert last categorie in array
-            XCTAssertEqual(self.sut.categories!.last?.id, -1)
 
             //Test advertItem.delegate is not nil
             for advertItem in self.sut.advertList! {
@@ -62,7 +59,6 @@ class AdvertListViewModelTests: XCTestCase {
             expectation.fulfill()
         },
         alertMessage: {
-            //Then
             print("\($0)")
             XCTAssertTrue(false)
             expectation.fulfill()
@@ -77,7 +73,6 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertList, data: dataErrorAdvertList)
         //When
         sut.fetchData(success: {
-            //Then
             XCTAssertTrue(false)
             expectation.fulfill()
         },
@@ -96,7 +91,6 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList, statusCode: 404)
         //When
         sut.fetchData(success: {
-            //Then
             XCTAssertTrue(false)
             expectation.fulfill()
         },
@@ -115,7 +109,6 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList, error: TestSession.MockError())
         //When
         sut.fetchData(success: {
-            //Then
             XCTAssertTrue(false)
             expectation.fulfill()
         },
@@ -174,12 +167,36 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
+    func testFilterByIdCategoryAndSortByDateWithIdAllCategories() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        sut.sortByDateSelected = .descending
+        sut.fetchData(success: {
+            //When
+            self.sut.filterByIdCategoryAndSortByDate(-1) {
+                //Then
+                XCTAssertEqual(self.sut.advertList!.count, self.sut.advertListVM!.count)
+
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
     func testFilterByIdCategoryAndSortByDateAscending() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.sortByDateCreated = .ascending
+        sut.sortByDateSelected = .ascending
         sut.fetchData(success: {
             //When
             self.sut.filterByIdCategoryAndSortByDate(1) {
@@ -208,7 +225,7 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.sortByDateCreated = .descending
+        sut.sortByDateSelected = .descending
         sut.fetchData(success: {
             //When
             self.sut.filterByIdCategoryAndSortByDate(1) {
@@ -231,6 +248,54 @@ class AdvertListViewModelTests: XCTestCase {
         })
         wait(for: [expectation], timeout: 10.0)
     }
+
+    func test_displayFilterCategoryView_success() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        var completion = 0
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+               return
+            }
+
+            let settingView = SettingView(parentWindow: self.windows, settingViewFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            //When
+            self.sut.displayFilterCategoryView(settingView: settingView) {
+                completion = 1
+            }
+            self.sut.filterCategoryViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+
+            //Then
+            XCTAssertEqual(self.sut.filterCategoryViewModel?.title, "Filtrer par")
+            XCTAssertEqual(self.sut.filterCategoryViewModel?.cellModelList.count, 12)
+            XCTAssertNil(self.sut.filterCategoryViewModel?.cellModelSelected)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                XCTAssertEqual(completion, 1)
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func test_displayFilterCategoryView_when_categories_empty() {
+        //Given
+        let settingView = SettingView(parentWindow: self.windows, settingViewFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        //When
+        self.sut.displayFilterCategoryView(settingView: settingView) {}
+
+        //Then
+        XCTAssertNil(self.sut.filterCategoryViewModel)
+
+    }
+
     // MARK: - NameCategory delegate
     func testNameCategoryReturnNil() {
         //Given
