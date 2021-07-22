@@ -10,7 +10,7 @@ import XCTest
 class AdvertListDataSourceTests: XCTestCase {
 
     class MockAdvertListDataSource: AdvertListDataSource {
-        var cellListVM: [AdvertItemViewModel]?
+        var cellListVM: [AdvertItemViewModel] = [AdvertItemViewModel]()
     }
     var sut: MockAdvertListDataSource!
     let url = URL(fileURLWithPath: Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json")!)
@@ -37,7 +37,7 @@ class AdvertListDataSourceTests: XCTestCase {
 
     func testCountCellReturnZero() throws {
         //Given
-        sut.cellListVM = nil
+        sut.cellListVM = [AdvertItemViewModel]()
 
         //When
         let count = sut.countCell()
@@ -61,7 +61,7 @@ class AdvertListDataSourceTests: XCTestCase {
     //return new AdvertItemModel() when cellListVM = nil
     func testAdvertItemViewModelIndexPath_CellListVM_Nil_ReturnNewAdvertItemModel() throws {
         //Given
-        sut.cellListVM = nil
+        sut.cellListVM = [AdvertItemViewModel]()
 
         //When
         let advertItemModel = sut.advertItemViewModel(indexPath: IndexPath(row: 0, section: 0)) as? AdvertItemModel

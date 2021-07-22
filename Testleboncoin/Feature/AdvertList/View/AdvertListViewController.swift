@@ -17,6 +17,15 @@ class AdvertListViewController: UITableViewController {
         return button
     }()
 
+    lazy var sortButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "sort_date")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 33, height: 33)
+        button.addTarget(self, action: #selector(sortClick), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     let viewModel = AdvertListViewModel()
     let advertCellId = "advertCellId"
     override func viewDidLoad() {
@@ -24,19 +33,42 @@ class AdvertListViewController: UITableViewController {
         // Do any additional setup after loading the view.
         self.setupTableView()
         self.configureBarButtonItems()
+        //get data from API
+        self.fectchData()
+
+    }
+
+    ///display error message API
+    private func displayErrorMessage(_ alertMessage: AlertMessage) {
+        let alertController = UIAlertController(title: alertMessage.title, message: alertMessage.message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Fermer", style: .cancel)
+        alertController.addAction(closeAction)
+
+        let retryAction = UIAlertAction(title: "Réessayer", style: .default) { _ in
+            self.fectchData()
+        }
+        alertController.addAction(retryAction)
+
+        present(alertController, animated: true)
+    }
+
+    /// get data from API
+    private func fectchData() {
         viewModel.fetchData(success: { [weak self] in
             guard let self = self else {
                 return
             }
             self.tableView.reloadData()
-        }, alertMessage: {
-           print("\($0)")
+        }, alertMessage: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.displayErrorMessage($0)
         })
-
     }
 
     /// configure tableview
-    fileprivate func setupTableView() {
+    private func setupTableView() {
          tableView.backgroundColor = .white
          tableView.separatorStyle = .none
          tableView.register(AdvertCell.self, forCellReuseIdentifier: advertCellId)
@@ -52,9 +84,19 @@ class AdvertListViewController: UITableViewController {
         }
     }
 
+    /// action for click filter button
+    @objc fileprivate func sortClick() {
+        viewModel.displaySortByDateView { [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.tableView.reloadData()
+        }
+    }
+
     ///configure ButtonItems: filter, sort
     fileprivate func configureBarButtonItems() {
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterButton)]
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: filterButton), UIBarButtonItem(customView: sortButton)]
     }
 }
 

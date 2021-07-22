@@ -29,7 +29,7 @@ class SettingView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.lineBreakMode = .byTruncatingTail
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -74,7 +74,7 @@ class SettingView: UIView {
     /// configure  all constraints in contentview
     private func addConstraintsToContentView() {
         titleLabel.anchor(top: contentView.topAnchor, bottom: nil, leading: contentView.leadingAnchor, trailing: closeButton.leadingAnchor, padding: .init(top: 25, left: 15, bottom: 0, right: 15))
-        closeButton.anchor(top: contentView.topAnchor, bottom: nil, leading: nil, trailing: contentView.trailingAnchor, padding: .init(top: 5, left: 0, bottom: 0, right: 5), size: .init(width: 33.0, height: 33.0))
+        closeButton.anchor(top: contentView.topAnchor, bottom: nil, leading: nil, trailing: contentView.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 10), size: .init(width: 33.0, height: 33.0))
         tableView.anchor(top: titleLabel.bottomAnchor, bottom: contentView.bottomAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, padding: .init(top: 25, left: 15, bottom: 5, right: 15))
     }
 
@@ -139,7 +139,7 @@ class SettingView: UIView {
 extension SettingView: SettingViewModelDelegate {
     func settingItemSelectFinished() {
         self.tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.handleDismissSettingView()
         }
     }

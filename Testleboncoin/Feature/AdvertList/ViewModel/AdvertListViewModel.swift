@@ -22,14 +22,19 @@ final class AdvertListViewModel: CategoryNameDelegate {
     /// provider for all asynchronous tasks
     var apiProvider = APIProvider()
 
+
+
+    /// category selected for filter la list items
+    private(set) var filterByCategorySelected: CategoryModel?
+
+    /// viewModel for filter by category
+    private(set) var filterByCategoryViewModel: SettingViewModel?
+
     ///  type selected for sort by date
     var sortByDateSelected: KEnum.SortByDate?
 
-    /// category selected for filter la list items
-    private(set) var filterCategorySelected: CategoryModel?
-
-    /// viewModel for filter by category
-    private(set) var filterCategoryViewModel: SettingViewModel?
+    /// viewModel for sort by date
+    private(set) var sortByDateViewModel: SettingViewModel?
 
     /// error message for wrong status code
     static let badResponseMessage: AlertMessage =
@@ -168,8 +173,8 @@ final class AdvertListViewModel: CategoryNameDelegate {
 
     /// sort advertListVM by date and completion after sort
     /// - Parameters:
-    ///   - sortDate: type of sort date
-    ///   - completion: action after sort
+    ///   - sortDate: type of sorting by date
+    ///   - completion: action after sorting
     func sortByDate(sortDate: KEnum.SortByDate, completion:@escaping() -> Void) {
         DispatchQueue.global().async {
             self.sortByDateSelected = sortDate
@@ -178,6 +183,37 @@ final class AdvertListViewModel: CategoryNameDelegate {
                 completion()
             }
         }
+    }
+
+    /// display sorting view
+    /// - Parameter completion: action after sorting
+    func displaySortByDateView(settingView: SettingView = SettingView.shared, completion:@escaping () -> Void) {
+        let viewModel = createSortbyDateViewModel(completion: completion)
+        self.sortByDateViewModel = viewModel
+        settingView.showSettings(viewModel: viewModel)
+    }
+    /// create viewModel for sorting view
+    /// - Parameter completion: action after sort by date
+    private func createSortbyDateViewModel(completion:@escaping () -> Void) -> SettingViewModel {
+        let titleFilter = "Trier par"
+        //insert new category(name: "all categories") into the list at first poistion
+        let sortTypes = [KEnum.SortByDate.descending, KEnum.SortByDate.ascending]
+
+        //init SettingViewModel
+        let settingViewModel = SettingViewModel(cellModelList: sortTypes, title: titleFilter, cellModelSelected: self.sortByDateSelected) {
+            //get SettingModelView selected and index selected after select a type of sorting in sorting view
+            [weak self] settingModelViewSelected, indexSelected in
+
+            guard let self = self, let sortByDate = settingModelViewSelected as? KEnum.SortByDate else {
+                return
+            }
+            //save type sorting selected
+            self.sortByDateSelected = sortByDate
+
+            //sort list item by type selected
+            self.sortByDate(sortDate: sortByDate, completion: completion)
+        }
+       return settingViewModel
     }
 
     // MARK: - Filter
@@ -206,8 +242,8 @@ final class AdvertListViewModel: CategoryNameDelegate {
     /// display filter view
     /// - Parameter completion: action after filter by category
     func displayFilterCategoryView(settingView: SettingView = SettingView.shared, completion:@escaping () -> Void) {
-        self.filterCategoryViewModel = createFilterCategoryViewModel(completion: completion)
-        guard let filterCategoryViewModel = self.filterCategoryViewModel else {
+        self.filterByCategoryViewModel = createFilterByCategoryViewModel(completion: completion)
+        guard let filterCategoryViewModel = self.filterByCategoryViewModel else {
             return
         }
         settingView.showSettings(viewModel: filterCategoryViewModel)
@@ -215,7 +251,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
 
     /// create viewModel for filter view
     /// - Parameter completion: action after filter by category
-    private func createFilterCategoryViewModel(completion:@escaping () -> Void) -> SettingViewModel? {
+    private func createFilterByCategoryViewModel(completion:@escaping () -> Void) -> SettingViewModel? {
         guard var categories = self.categories
         else {
             return nil
@@ -226,7 +262,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
         categories.insert(allCategory, at: 0)
 
         //init SettingViewModel
-        let settingViewModel = SettingViewModel(cellModelList: categories, title: titleFilter, cellModelSelected: self.filterCategorySelected) {
+        let settingViewModel = SettingViewModel(cellModelList: categories, title: titleFilter, cellModelSelected: self.filterByCategorySelected) {
             //get SettingModelView selected and index selected after select a category in filterView
             [weak self] settingModelViewSelected, indexSelected in
 
@@ -234,7 +270,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
                 return
             }
             //save categoryModel selected
-            self.filterCategorySelected = categoryModel
+            self.filterByCategorySelected = categoryModel
 
             //action filter list item by id of Category selected
             self.filterByIdCategoryAndSortByDate(categoryModel.id, completion: completion)
@@ -246,7 +282,7 @@ final class AdvertListViewModel: CategoryNameDelegate {
 
 // MARK: - Protocol AdvertListDataSource
 extension AdvertListViewModel: AdvertListDataSource {
-    var cellListVM: [AdvertItemViewModel]? {
-        self.advertListVM
+    var cellListVM: [AdvertItemViewModel] {
+        self.advertListVM ?? [AdvertItemViewModel]()
     }
 }

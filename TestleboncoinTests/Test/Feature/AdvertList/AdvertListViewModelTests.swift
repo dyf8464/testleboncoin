@@ -272,7 +272,7 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        var completion = 0
+        var completion = false
         sut.fetchData(success: { [weak self] in
             guard let self = self else {
                return
@@ -281,16 +281,55 @@ class AdvertListViewModelTests: XCTestCase {
             let settingView = SettingView(parentWindow: self.windows, settingViewFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
             //When
             self.sut.displayFilterCategoryView(settingView: settingView) {
-                completion = 1
+                completion = true
             }
-            self.sut.filterCategoryViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+            self.sut.filterByCategoryViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
 
             //Then
-            XCTAssertEqual(self.sut.filterCategoryViewModel?.title, "Filtrer par")
-            XCTAssertEqual(self.sut.filterCategoryViewModel?.cellModelList.count, 12)
-            XCTAssertNil(self.sut.filterCategoryViewModel?.cellModelSelected)
+            XCTAssertEqual(self.sut.filterByCategoryViewModel?.title, "Filtrer par")
+            XCTAssertEqual(self.sut.filterByCategoryViewModel?.cellModelList.count, 12)
+            XCTAssertNil(self.sut.filterByCategoryViewModel?.cellModelSelected)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                XCTAssertEqual(completion, 1)
+                XCTAssertTrue(completion)
+                //test category selected is "Tous les catégories"
+                XCTAssertEqual(self.sut.filterByCategorySelected?.id, -1)
+                expectation.fulfill()
+            }
+
+        },
+        alertMessage: {
+            print("\($0)")
+            XCTAssertTrue(false)
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+
+    func test_displaySortByDateView_success() {
+        //Given
+        let expectation = XCTestExpectation()
+        session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
+        session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
+        var completion = false
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+               return
+            }
+
+            let settingView = SettingView(parentWindow: self.windows, settingViewFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+            //When
+            self.sut.displaySortByDateView (settingView: settingView) {
+                completion = true
+            }
+            self.sut.sortByDateViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+
+            //Then
+            XCTAssertEqual(self.sut.sortByDateViewModel?.title, "Trier par")
+            XCTAssertEqual(self.sut.sortByDateViewModel?.cellModelList.count, 2)
+            XCTAssertNil(self.sut.sortByDateViewModel?.cellModelSelected)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                XCTAssertTrue(completion)
+                XCTAssertEqual(self.sut.sortByDateSelected, KEnum.SortByDate.descending)
                 expectation.fulfill()
             }
 
@@ -310,7 +349,7 @@ class AdvertListViewModelTests: XCTestCase {
         self.sut.displayFilterCategoryView(settingView: settingView) {}
 
         //Then
-        XCTAssertNil(self.sut.filterCategoryViewModel)
+        XCTAssertNil(self.sut.filterByCategoryViewModel)
 
     }
 

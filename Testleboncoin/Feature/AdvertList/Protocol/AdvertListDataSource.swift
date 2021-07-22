@@ -9,7 +9,7 @@ import Foundation
 
 protocol AdvertListDataSource {
 
-    var cellListVM: [AdvertItemViewModel]? {get}
+    var cellListVM: [AdvertItemViewModel] {get}
     /// get count of tableview cell
     func countCell() -> Int
 
@@ -21,7 +21,7 @@ protocol AdvertListDataSource {
 extension AdvertListDataSource {
     /// get count of tableviewcell
     func countCell() -> Int {
-        return self.cellListVM?.count ?? 0
+        return self.cellListVM.count
     }
 
     /// get advertItemViewModel by indexPath of tableview
@@ -29,10 +29,6 @@ extension AdvertListDataSource {
         if indexPath.row >= countCell() {
             return AdvertItemModel()
         }
-
-        guard let advertListVM = self.cellListVM else {
-            return AdvertItemModel()
-        }
-        return advertListVM[indexPath.row]
+        return cellListVM[indexPath.row]
     }
 }
