@@ -42,7 +42,10 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
         //When
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //Then
             //Test advertList, categories, advertListVM
             XCTAssertEqual(self.sut.advertList!.count, 300)
@@ -126,7 +129,10 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             self.sut.sortByDate(sortDate: .ascending) {
                 //Then
@@ -149,7 +155,10 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             self.sut.sortByDate(sortDate: .descending) {
                 //Then
@@ -173,7 +182,10 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
         sut.sortByDateSelected = .descending
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             self.sut.filterByIdCategoryAndSortByDate(-1) {
                 //Then
@@ -197,7 +209,10 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
         sut.sortByDateSelected = .ascending
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             self.sut.filterByIdCategoryAndSortByDate(1) {
                 //Then
@@ -226,7 +241,10 @@ class AdvertListViewModelTests: XCTestCase {
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
         sut.sortByDateSelected = .descending
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             self.sut.filterByIdCategoryAndSortByDate(1) {
                 //Then
@@ -302,7 +320,10 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             let nameCategory = self.sut.nameCategory(idCategory: -20)
             XCTAssertNil(nameCategory)
@@ -322,7 +343,10 @@ class AdvertListViewModelTests: XCTestCase {
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
         session.registerTestResponse(Constants.urlAdvertList, data: dataAdvertList)
-        sut.fetchData(success: {
+        sut.fetchData(success: { [weak self] in
+            guard let self = self else {
+                return
+            }
             //When
             let cellListVM = self.sut.cellListVM
 
