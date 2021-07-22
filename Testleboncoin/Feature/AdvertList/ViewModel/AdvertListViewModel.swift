@@ -74,7 +74,10 @@ final class AdvertListViewModel: CategoryNameDelegate {
     ///   - success: closure for case success
     ///   - error: closure for case failure, return error
     private func fetchCateogory(success: @escaping() -> Void, error: @escaping(Error) -> Void) {
-        apiProvider.fetchCategories {
+        apiProvider.fetchCategories { [weak self] in
+            guard let self = self else {
+                return
+            }
             switch $0 {
             case let .success(categories) :
                 self.categories = categories
@@ -90,7 +93,10 @@ final class AdvertListViewModel: CategoryNameDelegate {
     ///   - success: closure for case success
     ///   - error:   closure for case failure, return error
     private func fetchAdvertList(success: @escaping() -> Void, error: @escaping(Error) -> Void) {
-        apiProvider.fetchAdvertList {
+        apiProvider.fetchAdvertList { [weak self] in
+            guard let self = self else {
+                return
+            }
             switch $0 {
             case let .success(advertList) :
                 self.advertList = advertList
