@@ -30,5 +30,6 @@ class AdvertDetailViewModelTests: XCTestCase {
         XCTAssertEqual(sut.detailCreationDateStringVM, "05-11-2019 à 16:56")
         XCTAssertEqual(sut.detailImageUrl, "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-thumb/2c95.jpg")
         XCTAssertEqual(sut.detailIsUrgentVM, false)
+        XCTAssertEqual(sut.detailNameCategory, "")
     }
 }

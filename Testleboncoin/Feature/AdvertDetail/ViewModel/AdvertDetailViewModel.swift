@@ -14,9 +14,14 @@ protocol AdvertDetailViewModel {
     var detailIsUrgentVM: Bool {get}
     var detailImageUrl: String? {get}
     var detailDescription: String {get}
+    var detailNameCategory: String {get}
 }
 
 extension AdvertItemModel: AdvertDetailViewModel {
+    var detailNameCategory: String {
+        nameCateogryVM
+    }
+
     var detailTitleVM: String {
         titleVM
     }

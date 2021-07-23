@@ -51,6 +51,15 @@ class AdvertDetailViewController: UIViewController {
         return label
     }()
 
+    let categoryLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        return label
+    }()
+
     let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 13.0)
@@ -138,6 +147,8 @@ class AdvertDetailViewController: UIViewController {
 
         separatorView.anchor(top: dateLabel.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: scrollContentView.trailingAnchor, padding: .init(top: labelSpacing, left: labelMargin, bottom: 0, right: labelSpacing), size: .init(width: 0, height: 1))
 
+        categoryLabel.anchor(top: separatorView.bottomAnchor, bottom: nil, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top: labelSpacing, left: 0, bottom: 0, right: labelSpacing))
+
         urgentLabel.anchor(top: nil, bottom: separatorView.topAnchor, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top: 0 , left: 0 , bottom: labelSpacing, right: labelMargin))
 
         descriptionTitleLabel.anchor(top: separatorView.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: nil, padding: .init(top: labelSpacing, left: labelSpacing, bottom: labelSpacing, right: 0))
@@ -171,11 +182,12 @@ class AdvertDetailViewController: UIViewController {
         }
         self.scrollView.addSubview(scrollContentView)
 
-        [advertImageView, titleLabel, priceLabel, dateLabel, separatorView, descriptionTitleLabel, descriptionLabel, urgentLabel].forEach {
+        [advertImageView, titleLabel, priceLabel, dateLabel, separatorView, descriptionTitleLabel, descriptionLabel, urgentLabel, categoryLabel].forEach {
             scrollContentView.addSubview($0)
         }
     }
 
+    /// configure subviews with viewModel
     func setupSubviews() {
         guard let viewModel = viewModel else {
             return
@@ -186,6 +198,7 @@ class AdvertDetailViewController: UIViewController {
         self.dateLabel.text = viewModel.detailCreationDateStringVM
         self.descriptionLabel.text = viewModel.detailDescription
         self.urgentLabel.isHidden = !viewModel.detailIsUrgentVM
+        self.categoryLabel.text = viewModel.detailNameCategory
     }
 
 }
