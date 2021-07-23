@@ -86,36 +86,13 @@ class AdvertCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
+        selectionStyle = .none
         addViewToSubview()
         addConstraints()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        if #available(iOS 13, *) {
-            super.setSelected(selected, animated: animated)
-        } else { // set same behaviour as ios13,  cellBackground.backgroundColor is changed when cell is clicked in ios12
-            let color = cellBackground.backgroundColor
-            super.setSelected(selected, animated: animated)
-            if selected {
-                cellBackground.backgroundColor = color
-            }
-        }
-    }
-
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if #available(iOS 13, *) {
-            super.setHighlighted(highlighted, animated: animated)
-        } else { // set same behaviour as ios13,  cellBackground.backgroundColor is changed when cell is clicked in ios12
-            let color = cellBackground.backgroundColor
-            super.setHighlighted(highlighted, animated: animated)
-            if highlighted {
-                cellBackground.backgroundColor = color
-            }
-        }
     }
 
     // MARK: - Constraints and Add Subview Functions

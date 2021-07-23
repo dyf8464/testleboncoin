@@ -283,16 +283,21 @@ class AdvertListViewModelTests: XCTestCase {
             self.sut.displayFilterCategoryView(settingView: settingView) {
                 completion = true
             }
-            self.sut.filterByCategoryViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
 
             //Then
             XCTAssertEqual(self.sut.filterByCategoryViewModel?.title, "Filtrer par")
             XCTAssertEqual(self.sut.filterByCategoryViewModel?.cellModelList.count, 12)
             XCTAssertNil(self.sut.filterByCategoryViewModel?.cellModelSelected)
+            self.sut.filterByCategoryViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                //test displayFilterCategoryView completion is called
                 XCTAssertTrue(completion)
+
                 //test category selected is "Tous les catégories"
                 XCTAssertEqual(self.sut.filterByCategorySelected?.id, -1)
+
+                //test filterByCategoryViewModel is removed after category is selected
+                XCTAssertNil(self.sut.filterByCategoryViewModel)
                 expectation.fulfill()
             }
 
@@ -321,15 +326,21 @@ class AdvertListViewModelTests: XCTestCase {
             self.sut.displaySortByDateView (settingView: settingView) {
                 completion = true
             }
-            self.sut.sortByDateViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
 
             //Then
             XCTAssertEqual(self.sut.sortByDateViewModel?.title, "Trier par")
             XCTAssertEqual(self.sut.sortByDateViewModel?.cellModelList.count, 2)
             XCTAssertNil(self.sut.sortByDateViewModel?.cellModelSelected)
+            self.sut.sortByDateViewModel?.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                //test displaySortByDateView completion is called
                 XCTAssertTrue(completion)
+
+                //test sortByDate Selected is descending
                 XCTAssertEqual(self.sut.sortByDateSelected, KEnum.SortByDate.descending)
+
+                //test sortByDateViewModel is removed after type of sorting is selected
+                XCTAssertNil(self.sut.sortByDateViewModel)
                 expectation.fulfill()
             }
 

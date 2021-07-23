@@ -16,6 +16,9 @@ protocol AdvertListDataSource {
     /// get advertItemViewModel by indexPath of tableview
     /// - Parameter indexPath: indexPath of tableview
     func advertItemViewModel(indexPath: IndexPath) -> AdvertItemViewModel
+
+
+    func createAdvertDetailViewController(indexPath: IndexPath) -> AdvertDetailViewController
 }
 
 extension AdvertListDataSource {
@@ -30,5 +33,12 @@ extension AdvertListDataSource {
             return AdvertItemModel()
         }
         return cellListVM[indexPath.row]
+    }
+
+    /// get advertItemViewModel by indexPath of tableview
+    func createAdvertDetailViewController(indexPath: IndexPath) -> AdvertDetailViewController {
+        let advertDetailViewController = AdvertDetailViewController()
+        advertDetailViewController.viewModel = self.advertItemViewModel(indexPath: indexPath) as? AdvertDetailViewModel
+        return advertDetailViewController
     }
 }

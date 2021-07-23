@@ -67,6 +67,9 @@
 		EDB610C026A993030047BFAC /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */; };
 		EDB610C226A9A7840047BFAC /* SettingCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610C126A9A7840047BFAC /* SettingCellTest.swift */; };
 		EDB610C626A9AFA10047BFAC /* SettingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */; };
+		EDB610CC26AA33D80047BFAC /* AdvertDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610CB26AA33D80047BFAC /* AdvertDetailViewModel.swift */; };
+		EDB610CE26AA38DD0047BFAC /* AdvertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610CD26AA38DD0047BFAC /* AdvertDetailViewController.swift */; };
+		EDB610D226AAAC3B0047BFAC /* AdvertDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB610D026AAABFA0047BFAC /* AdvertDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +158,9 @@
 		EDB610BF26A993030047BFAC /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 		EDB610C126A9A7840047BFAC /* SettingCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellTest.swift; sourceTree = "<group>"; };
 		EDB610C526A9AFA10047BFAC /* SettingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewTests.swift; sourceTree = "<group>"; };
+		EDB610CB26AA33D80047BFAC /* AdvertDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewModel.swift; sourceTree = "<group>"; };
+		EDB610CD26AA38DD0047BFAC /* AdvertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewController.swift; sourceTree = "<group>"; };
+		EDB610D026AAABFA0047BFAC /* AdvertDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +238,6 @@
 		ED548EE326A4604E0067B043 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C6EF126A8CD9000BA2CF1 /* Setting */,
 				ED548EE426A4605D0067B043 /* AlertMessage.swift */,
 			);
 			path = Support;
@@ -317,6 +322,7 @@
 		ED6C838926A0817A00E24D02 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C6EF126A8CD9000BA2CF1 /* Setting */,
 				ED6C838B26A08A5600E24D02 /* AdvertDetail */,
 				ED6C838A26A0818A00E24D02 /* AdvertList */,
 			);
@@ -337,7 +343,6 @@
 		ED6C838B26A08A5600E24D02 /* AdvertDetail */ = {
 			isa = PBXGroup;
 			children = (
-				ED6C838E26A08AC500E24D02 /* Model */,
 				ED6C838D26A08AB800E24D02 /* ViewModel */,
 				ED6C838C26A08A9F00E24D02 /* View */,
 			);
@@ -347,6 +352,7 @@
 		ED6C838C26A08A9F00E24D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDB610CD26AA38DD0047BFAC /* AdvertDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,15 +360,9 @@
 		ED6C838D26A08AB800E24D02 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EDB610CB26AA33D80047BFAC /* AdvertDetailViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		ED6C838E26A08AC500E24D02 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		ED6C839726A17B2900E24D02 /* Mock */ = {
@@ -448,6 +448,7 @@
 		EDB610C326A9A79C0047BFAC /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				EDB610CF26AAAB070047BFAC /* AdvertDetail */,
 				EDB610C826AA0FAE0047BFAC /* Settting */,
 				EDB610C426A9A7B10047BFAC /* AdvertList */,
 			);
@@ -505,6 +506,14 @@
 				ED2C6EB626A4C69200BA2CF1 /* ImageHelperTests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		EDB610CF26AAAB070047BFAC /* AdvertDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EDB610D026AAABFA0047BFAC /* AdvertDetailViewModelTests.swift */,
+			);
+			path = AdvertDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -739,8 +748,10 @@
 			files = (
 				ED6C83AD26A22C8300E24D02 /* AdvertItem.swift in Sources */,
 				ED2C6ED026A647AA00BA2CF1 /* Extension+Array.swift in Sources */,
+				EDB610CE26AA38DD0047BFAC /* AdvertDetailViewController.swift in Sources */,
 				ED2C6EFD26A8D30600BA2CF1 /* SettingCell.swift in Sources */,
 				ED2C6EFC26A8D30100BA2CF1 /* SettingCellModel.swift in Sources */,
+				EDB610CC26AA33D80047BFAC /* AdvertDetailViewModel.swift in Sources */,
 				ED2C6EDB26A774DE00BA2CF1 /* Extension+UIColor.swift in Sources */,
 				ED2C6EFE26A8D30A00BA2CF1 /* SettingViewModel.swift in Sources */,
 				ED6C839926A17B5400E24D02 /* TestSession.swift in Sources */,
@@ -786,6 +797,7 @@
 				ED6C839F26A18CC000E24D02 /* RESTAPIClientTests.swift in Sources */,
 				EDB610BE26A98E060047BFAC /* SettingCellModelTests.swift in Sources */,
 				EDB610C226A9A7840047BFAC /* SettingCellTest.swift in Sources */,
+				EDB610D226AAAC3B0047BFAC /* AdvertDetailViewModelTests.swift in Sources */,
 				ED2C6EC926A5D27900BA2CF1 /* ExtensionStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,12 +46,12 @@ class ExtensionStringTests: XCTestCase {
         XCTAssertEqual(stringTest, stringExp)
     }
 
-    func testStringtoStringWithNewFormatReturnNil () {
+    func testStringtoStringWithNewFormatReturnStringEmpty () {
         //Given
         let wrongFormat = ConstantsUtils.dateFormatVM
         //When
         let stringTest = dateString.toString(withFormat: wrongFormat, toFormat: ConstantsUtils.dateFormatVM)
         //Then
-        XCTAssertNil(stringTest)
+        XCTAssertEqual("", stringTest)
     }
 }

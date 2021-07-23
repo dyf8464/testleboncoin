@@ -23,14 +23,14 @@ extension String {
     ///   - format: current format
     ///   - toFormat: desired format
     /// - Returns: desired String
-    func toString(withFormat format: String, toFormat: String) -> String? {
+    func toString(withFormat format: String, toFormat: String) -> String {
         let dateFormatterInput = DateFormatter()
         dateFormatterInput.dateFormat = format
 
         let dateFormatterOutput = DateFormatter()
         dateFormatterOutput.dateFormat = toFormat
 
-        guard let dateInput = dateFormatterInput.date(from: self) else { return nil }
+        guard let dateInput = dateFormatterInput.date(from: self) else { return "" }
 
         return dateFormatterOutput.string(from: dateInput)
     }

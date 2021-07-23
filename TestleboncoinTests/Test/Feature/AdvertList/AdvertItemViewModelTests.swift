@@ -14,7 +14,7 @@ class AdvertItemViewModelTests: XCTestCase {
     }
 
     let url = URL(fileURLWithPath: Bundle.main.path(forResource: Constants.testAdvertItemFileName, ofType: "json")!)
-    var sut: AdvertItemModel!
+    var sut: AdvertItemViewModel!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,7 +28,7 @@ class AdvertItemViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testAdvertItemViewModel() {
+    func test_advertItemViewModel_properties() {
         XCTAssertEqual(sut.titleVM, "test Title")
         XCTAssertEqual(sut.priceVM, "140.00 €")
         XCTAssertEqual(sut.creationDateStringVM, "05-11-2019 16:56")
@@ -38,11 +38,14 @@ class AdvertItemViewModelTests: XCTestCase {
         XCTAssertEqual(sut.smallImageUrl, "https://raw.githubusercontent.com/leboncoin/paperclip/master/ad-small/2c9563bbe85f12a5dcaeb2c40989182463270404.jpg")
     }
 
-    func testAdvertItemViewModelNameCateogryVM() throws {
+    func test_advertItemViewModel_nameCateogryVM() throws {
         let mockCategoryNameDelegate = MockCategoryNameDelegate()
         let url = URL(fileURLWithPath: Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")!)
         let categories = try JSONDecoder().decode([CategoryModel].self, from: Data(contentsOf: url))
         mockCategoryNameDelegate.categories = categories
+        guard let sut = sut as? AdvertItemModel else {
+            return
+        }
         sut.delegate = mockCategoryNameDelegate
         XCTAssertEqual(sut.nameCateogryVM, "Maison")
     }

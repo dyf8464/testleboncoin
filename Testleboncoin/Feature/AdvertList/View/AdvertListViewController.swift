@@ -8,7 +8,7 @@
 import UIKit
 
 class AdvertListViewController: UITableViewController {
-    lazy var filterButton: UIButton = {
+    private lazy var filterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "filter_category")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 33, height: 33)
@@ -17,7 +17,7 @@ class AdvertListViewController: UITableViewController {
         return button
     }()
 
-    lazy var sortButton: UIButton = {
+    private lazy var sortButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "sort_date")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 33, height: 33)
@@ -26,8 +26,8 @@ class AdvertListViewController: UITableViewController {
         return button
     }()
 
-    let viewModel = AdvertListViewModel()
-    let advertCellId = "advertCellId"
+   private let viewModel = AdvertListViewModel()
+   private let advertCellId = "advertCellId"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -100,7 +100,7 @@ class AdvertListViewController: UITableViewController {
     }
 }
 
-// MARK: - UITableView Data Source
+// MARK: - UITableView Data Source, Delegate
 extension AdvertListViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,4 +117,13 @@ extension AdvertListViewController {
         cell.loadViewModel(viewModel: viewModel.advertItemViewModel(indexPath: indexPath))
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = viewModel.createAdvertDetailViewController(indexPath: indexPath)
+        self.present(viewController, animated: true)
+
+    }
+
 }
+
+
