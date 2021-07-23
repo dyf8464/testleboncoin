@@ -44,7 +44,7 @@ extension AdvertItemModel: AdvertItemViewModel {
     }
 
     var creationDateStringVM: String {
-        creationDate.toString(withFormat: ConstantsUtils.dateFormatJson, toFormat: ConstantsUtils.dateFormatVM) ?? ""
+        creationDate.toString(withFormat: ConstantsUtils.dateFormatJson, toFormat: ConstantsUtils.dateFormatVM)
     }
 
     var isUrgentVM: Bool {
