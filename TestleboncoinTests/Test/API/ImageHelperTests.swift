@@ -23,7 +23,7 @@ class ImageHelperTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testFetchDataReturnSuccess() {
+    func test_fetchImage_return_success() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData)
@@ -44,7 +44,7 @@ class ImageHelperTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataReturnError() {
+    func test_fetchImage_return_error() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData, error: TestSession.MockError())

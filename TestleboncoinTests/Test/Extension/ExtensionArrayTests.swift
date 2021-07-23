@@ -22,7 +22,7 @@ class ExtensionArrayTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-     func testIsAscending() {
+     func test_isAscending() {
         //Given
         sut.sort(by: <)
         //When
@@ -31,7 +31,7 @@ class ExtensionArrayTests: XCTestCase {
         XCTAssertTrue(result)
     }
 
-    func testIsDescending() {
+    func test_isDescending() {
        //Given
        sut.sort(by: >)
        //When

@@ -44,7 +44,7 @@ class AdvertListDataSourceTests: XCTestCase {
         sut = nil
     }
 
-    func testCountCellReturnNoZero() throws {
+    func test_countCell_return_noZero() throws {
         //Given
         let list = try JSONDecoder().decode([AdvertItemModel].self, from: Data(contentsOf: url))
         sut.cellListVM = list
@@ -55,7 +55,7 @@ class AdvertListDataSourceTests: XCTestCase {
         XCTAssertEqual(count, 300)
     }
 
-    func testCountCellReturnZero() throws {
+    func test_countCell_return_Zero() throws {
         //Given
         sut.cellListVM = [AdvertItemViewModel]()
 

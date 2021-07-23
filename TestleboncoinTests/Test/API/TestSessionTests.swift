@@ -26,7 +26,7 @@ class TestSessionTests: XCTestCase {
     }
 
     // MARK: - Tests
-    func testMockDataTaskURL() {
+    func test_dataTaskURL_success() {
         //Given
         let expectation = XCTestExpectation()
         sut.registerTestResponse(endpoint, data: sampleData)
@@ -45,7 +45,7 @@ class TestSessionTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testMockDataTaskRequest() {
+    func test_dataTaskRequest_success() {
         //Given
         let expectation = XCTestExpectation()
         sut.registerTestResponse(endpoint, data: sampleData)
@@ -64,7 +64,7 @@ class TestSessionTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testDataTaskNoRegisterTestResponse() {
+    func test_DataTaskEndpoint_NoRegister_response_nil() {
         //Given
         let expectation = XCTestExpectation()
         //When

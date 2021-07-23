@@ -36,7 +36,7 @@ class AdvertListViewModelTests: XCTestCase {
     }
 
     // MARK: - Tests API
-    func testFetchDataReturnSuccess() {
+    func test_fetchData_return_success() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -69,7 +69,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataWithBadFormatJson() {
+    func test_fetchData_with_badFormatJson() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataErrorCategories)
@@ -87,7 +87,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFechDataReturnErrorStatusCode() {
+    func test_FechData_return_errorStatusCode() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories, statusCode: 404)
@@ -105,7 +105,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFechDataReturnErrorUnkown() {
+    func test_fechData_return_errorUnkown() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories, error: TestSession.MockError())
@@ -124,7 +124,7 @@ class AdvertListViewModelTests: XCTestCase {
     }
 
     // MARK: - Tests Sort, Filter
-    func testSortByDateWithAscending() {
+    func test_sortByDate_with_ascending() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -150,7 +150,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testSortByDateWithDescending() {
+    func test_SortByDate_with_descending() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -176,7 +176,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFilterByIdCategoryAndSortByDateWithIdAllCategories() {
+    func test_filterByIdCategoryAndSortByDate_with_idAllCategories() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -203,7 +203,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFilterByIdCategoryAndSortByDateAscending() {
+    func test_filterByIdCategoryAndSortByDate_ascending() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -235,7 +235,7 @@ class AdvertListViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFilterByIdCategoryAndSortByDateDescending() {
+    func test_filterByIdCategoryAndSortByDate_descending() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -365,7 +365,7 @@ class AdvertListViewModelTests: XCTestCase {
     }
 
     // MARK: - NameCategory delegate
-    func testNameCategoryReturnNil() {
+    func test_nameCategory_returnNil() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)
@@ -388,7 +388,7 @@ class AdvertListViewModelTests: XCTestCase {
     }
 
     // MARK: - AdvertListDataSource
-    func testCellListVMReturnCorrectly() {
+    func test_cellListVM_return_correctly() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlAdvertCategory, data: dataCategories)

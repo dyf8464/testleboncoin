@@ -17,7 +17,7 @@ class ExtensionStringTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testStringtoDateReturnNoNil () {
+    func test_toDate_return_noNil () {
         //Given
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = ConstantsUtils.dateFormatJson
@@ -28,7 +28,7 @@ class ExtensionStringTests: XCTestCase {
         XCTAssertEqual(dateTest, dateExp)
     }
 
-    func testStringtoDateReturnNil () {
+    func test_toDate_return_nil () {
         //Given
         let format = ConstantsUtils.dateFormatVM
         //When
@@ -37,7 +37,7 @@ class ExtensionStringTests: XCTestCase {
         XCTAssertNil(dateTest)
     }
 
-    func testStringtoStringWithNewFormatReturnNoNil () {
+    func test_toString_with_NewFormat_return_noNil () {
         //Given
         let stringExp = "05-11-2019 16:56"
         //When
@@ -46,7 +46,7 @@ class ExtensionStringTests: XCTestCase {
         XCTAssertEqual(stringTest, stringExp)
     }
 
-    func testStringtoStringWithNewFormatReturnStringEmpty () {
+    func test_toString_with_newFormat_return_stringEmpty () {
         //Given
         let wrongFormat = ConstantsUtils.dateFormatVM
         //When

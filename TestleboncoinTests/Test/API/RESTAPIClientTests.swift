@@ -33,7 +33,7 @@ class RESTAPIClientTests: XCTestCase {
         try super.tearDownWithError()
     }
     // MARK: - Tests
-    func testRequestAPIReturnSuccess() {
+    func test_requestAPI_return_success() {
         //Given
         let expectation = XCTestExpectation()
         let path = Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")
@@ -62,7 +62,7 @@ class RESTAPIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testRequestAPIWithBadFormatJSON() {
+    func test_requestAPI_with_badFormatJSON_return_error() {
         //Given
         let expectation = XCTestExpectation()
         let path = Bundle.main.path(forResource: Constants.testCategoryErrorFileName, ofType: "json")
@@ -93,7 +93,7 @@ class RESTAPIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testRequestAPIReturnErrorStatusCode() {
+    func test_requestAPI_return_errorStatusCode() {
         //Given
         let expectation = XCTestExpectation()
         let path = Bundle.main.path(forResource: Constants.testCategoryFileName, ofType: "json")
@@ -123,7 +123,7 @@ class RESTAPIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testRequest() {
+    func test_request_success() {
         let endPoint = APIEndPoint.advertCategory
         let request = sut.request(endPoint: endPoint)
         XCTAssertEqual(request, URLRequest(url: URL(string: sut.baseURL + APIEndPoint.advertCategory.endPointURL)!))

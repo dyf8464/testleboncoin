@@ -35,7 +35,7 @@ class SettingViewTests: XCTestCase {
         settingViewModel = nil
     }
 
-    func test_showSettings() throws {
+    func test_showSettings_return_success() throws {
 
         //Given
         let settingViewModel: SettingViewModel = self.settingViewModel

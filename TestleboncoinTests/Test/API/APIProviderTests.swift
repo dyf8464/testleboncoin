@@ -23,7 +23,7 @@ class APIProviderTests: XCTestCase {
     }
 
     // MARK: - Tests
-    func testFetchCategoriesReturnSuccess() {
+    func test_fetchCategories_return_success() {
         //Given
         let expectation = XCTestExpectation()
         let requestExpect = self.requestExpectAdvertCategory()
@@ -53,7 +53,7 @@ class APIProviderTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchAdvertListReturnSuccess() {
+    func test_fetchAdvertList_return_success() {
         //Given
         let expectation = XCTestExpectation()
         let requestExpect = self.requestExpectAdvertList()
@@ -90,7 +90,7 @@ class APIProviderTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchAdvertListWithBadFormatJson() {
+    func test_fetchAdvertList_with_badFormatJson() {
         //Given
         let expectation = XCTestExpectation()
         let path = Bundle.main.path(forResource: Constants.testAdvertListErrorFileName, ofType: "json")
@@ -120,7 +120,7 @@ class APIProviderTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchAdvertListReturnErrorStatusCode() {
+    func test_fetchAdvertList_return_errorStatusCode() {
         //Given
         let expectation = XCTestExpectation()
         let path = Bundle.main.path(forResource: Constants.testAdvertListFileName, ofType: "json")

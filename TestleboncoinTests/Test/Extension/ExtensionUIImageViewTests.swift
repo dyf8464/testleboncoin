@@ -28,7 +28,7 @@ class ExtensionUIImageViewTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testFetchDataReturnSuccess() {
+    func test_asyncUrlString_return_success() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData)
@@ -46,7 +46,7 @@ class ExtensionUIImageViewTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataWithUrlNil() {
+    func test_asyncUrlString_with_urlNil() {
         //Given
         let expectation = XCTestExpectation()
 
@@ -63,7 +63,7 @@ class ExtensionUIImageViewTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataWithUrlNoValidate() {
+    func test_asyncUrlString_with_urlNoValidate() {
         //Given
         let expectation = XCTestExpectation()
 
@@ -80,7 +80,7 @@ class ExtensionUIImageViewTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataReturnError() {
+    func test_asyncUrlString_return_error() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData, error: TestSession.MockError())
@@ -97,7 +97,7 @@ class ExtensionUIImageViewTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func testFetchDataFromCache() {
+    func test_asyncUrlString_fromCache() {
         //Given
         let expectation = XCTestExpectation()
         session.registerTestResponse(Constants.urlTestImage, data: testImageData)

@@ -20,7 +20,7 @@ class AdvertCellTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testLoadViewModel() throws {
+    func test_loadViewModel_success() throws {
         //Given
         let expectation = XCTestExpectation()
         let testImageData = Data.loadFileFromLocalPath(Bundle.main.path(forResource: Constants.testImageName, ofType: "jpg"))!
