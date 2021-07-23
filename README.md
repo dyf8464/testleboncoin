@@ -13,6 +13,7 @@ https://raw.githubusercontent.com/leboncoin/paperclip/master/swagger.yaml
 
 
 Les points attendus dans le projet sont:
+
 ● Une architecture qui respecte le principe de responsabilité unique
 
 ● Création des interfaces avec autolayout directement dans le code (pas de storyboard ni
@@ -32,18 +33,26 @@ Les efforts UX et UI
 Performances de l'application
 Code swifty
 
+
+
 Liste d'items
 
 Chaque item devra comporter au minimum une image, une catégorie, un titre et un prix. Un indicateur devra aussi avertir si l'item est urgent.
+
+
 
 Filtre
 
 Un filtre devra être disponible pour afficher seulement les items d'une catégorie.
 
+
+
 Tri
 
 Les items devront être triés par date.
 Attention cependant, les annonces marquées comme urgentes devront remonter en haut de la liste.
+
+
 
 Page de détail
 
