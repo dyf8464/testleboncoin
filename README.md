@@ -1,5 +1,5 @@
 # testleboncoin
-C'est un test de projet pour Leboncoin
+C'est un projet de test pour Leboncoin
 
 Description des besoins:
 
