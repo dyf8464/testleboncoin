@@ -15,7 +15,7 @@ class ExtensionUIImageViewTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        ImageHelper.imageCache = NSCache<AnyObject, AnyObject>()
+        ImageHelper.imageCache.removeAllObjects()
         session = TestSession()
         imageView = UIImageView()
 
@@ -23,7 +23,6 @@ class ExtensionUIImageViewTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        ImageHelper.imageCache = nil
         session = nil
         imageView = nil
         try super.tearDownWithError()

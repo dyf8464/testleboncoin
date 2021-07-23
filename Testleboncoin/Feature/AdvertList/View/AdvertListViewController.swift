@@ -26,11 +26,12 @@ class AdvertListViewController: UITableViewController {
         return button
     }()
 
-   private let viewModel = AdvertListViewModel()
+   var viewModel = AdvertListViewModel()
    private let advertCellId = "advertCellId"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Leboncoin"
         self.setupTableView()
         self.configureBarButtonItems()
         //get data from API
@@ -114,7 +115,8 @@ extension AdvertListViewController {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: advertCellId, for: indexPath) as? AdvertCell else {
             return UITableViewCell()
         }
-        cell.loadViewModel(viewModel: viewModel.advertItemViewModel(indexPath: indexPath))
+        let cellModel = viewModel.advertItemViewModel(indexPath: indexPath)
+        cell.loadViewModel(viewModel: cellModel)
         return cell
     }
 

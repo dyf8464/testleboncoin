@@ -112,7 +112,7 @@ class AdvertDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .leboncoinOrange
+        view.backgroundColor = .white
         self.addSubviews()
         self.addConstraints()
         self.setupSubviews()
@@ -138,7 +138,7 @@ class AdvertDetailViewController: UIViewController {
 
         separatorView.anchor(top: dateLabel.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: scrollContentView.trailingAnchor, padding: .init(top: labelSpacing, left: labelMargin, bottom: 0, right: labelSpacing), size: .init(width: 0, height: 1))
 
-        urgentLabel.anchor(top: nil, bottom: separatorView.topAnchor, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top: 0 , left:0 , bottom: labelSpacing, right: labelMargin))
+        urgentLabel.anchor(top: nil, bottom: separatorView.topAnchor, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top: 0 , left: 0 , bottom: labelSpacing, right: labelMargin))
 
         descriptionTitleLabel.anchor(top: separatorView.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: nil, padding: .init(top: labelSpacing, left: labelSpacing, bottom: labelSpacing, right: 0))
 
