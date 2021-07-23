@@ -11,6 +11,7 @@ class AdvertDetailViewController: UIViewController {
     var viewModel: AdvertDetailViewModel?
     let labelMargin: CGFloat = 10.0
     let labelSpacing: CGFloat = 10.0
+    let defaultImage = UIImage(named: "advertDefaultImage")
 
     let contentView: UIView  = {
         let contentView = UIView()
@@ -49,7 +50,7 @@ class AdvertDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 13.0)
@@ -123,7 +124,7 @@ class AdvertDetailViewController: UIViewController {
         self.contentViewAddConstraintsSafearea()
         scrollView.anchor(top: self.contentView.topAnchor, bottom: self.contentView.bottomAnchor, leading: self.contentView.leadingAnchor, trailing: self.contentView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
 
-        closeButton.anchor(top: self.contentView.topAnchor, bottom: nil, leading: nil, trailing: self.contentView.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 20),size: .init(width: 50, height: 50))
+        closeButton.anchor(top: self.contentView.topAnchor, bottom: nil, leading: nil, trailing: self.contentView.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 20), size: .init(width: 50, height: 50))
 
         scrollContentView.anchor(top: self.scrollView.topAnchor, bottom: self.scrollView.bottomAnchor, leading: self.scrollView.leadingAnchor, trailing: self.scrollView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
 
@@ -137,7 +138,7 @@ class AdvertDetailViewController: UIViewController {
 
         separatorView.anchor(top: dateLabel.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: scrollContentView.trailingAnchor, padding: .init(top: labelSpacing, left: labelMargin, bottom: 0, right: labelSpacing), size: .init(width: 0, height: 1))
 
-        urgentLabel.anchor(top: nil, bottom: separatorView.topAnchor, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top:0 , left:0 , bottom: labelSpacing, right: labelMargin))
+        urgentLabel.anchor(top: nil, bottom: separatorView.topAnchor, leading: nil, trailing: scrollContentView.trailingAnchor, padding: .init(top: 0 , left:0 , bottom: labelSpacing, right: labelMargin))
 
         descriptionTitleLabel.anchor(top: separatorView.bottomAnchor, bottom: nil, leading: scrollContentView.leadingAnchor, trailing: nil, padding: .init(top: labelSpacing, left: labelSpacing, bottom: labelSpacing, right: 0))
 
@@ -162,11 +163,10 @@ class AdvertDetailViewController: UIViewController {
         ])
     }
 
-
     /// configure hierarchy of cell
     fileprivate func addSubviews() {
         self.view.addSubview(contentView)
-        [scrollView,closeButton].forEach {
+        [scrollView, closeButton].forEach {
             contentView.addSubview($0)
         }
         self.scrollView.addSubview(scrollContentView)
@@ -176,14 +176,16 @@ class AdvertDetailViewController: UIViewController {
         }
     }
 
-    func setupSubviews()  {
-        self.advertImageView.asyncUrlString(self.viewModel?.detailImageUrl)
-        self.titleLabel.text = self.viewModel?.detailTitleVM
-        self.priceLabel.text = self.viewModel?.detailPriceVM
-        self.dateLabel.text = self.viewModel?.detailCreationDateStringVM
-        self.descriptionLabel.text = self.viewModel?.detailDescription
+    func setupSubviews() {
+        guard let viewModel = viewModel else {
+            return
+        }
+        self.advertImageView.asyncUrlString(self.viewModel?.detailImageUrl,imageDefault: defaultImage)
+        self.titleLabel.text = viewModel.detailTitleVM
+        self.priceLabel.text = viewModel.detailPriceVM
+        self.dateLabel.text = viewModel.detailCreationDateStringVM
+        self.descriptionLabel.text = viewModel.detailDescription
+        self.urgentLabel.isHidden = !viewModel.detailIsUrgentVM
     }
-
-  
 
 }
